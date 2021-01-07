@@ -14,8 +14,11 @@ $db = new DataLayer();
 // var_dump($users);
 
 
-$categories = $db->getCategory();
-var_dump($categories);
+// $categories = $db->getCategory();
+// var_dump($categories);
+
+$products = $db->getProduct();
+var_dump($products);
 
 
 

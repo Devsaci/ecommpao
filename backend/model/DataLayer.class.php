@@ -215,5 +215,46 @@ class DataLayer
         }
     }
 
-    
+      /**
+     * Methode permettant de récupérer les produits dans BD 
+     * @param VOID ne prend pas de paramètre
+     * @return ARRAY Tableau contenant les produits
+     * @return FALSE Echec de la persistance
+     * @return NULL Exception déclenchée
+     */
+    function getProduct(){
+        $sql = "SELECT * FROM ".DB_NAME.".`product`";
+        //echo  $sql;exit();
+        try {
+            $result = $this->connexion->prepare($sql);
+            $var = $result->execute();
+            $products = [];
+
+            while($data = $result->fetch(PDO::FETCH_OBJ)){
+               $product = new ProductEntity();
+               $product->setIdProduct($data->id);
+               $product->setName($data->name);
+               $product->setDescription($data->description);
+               $product->setPrice($data->price);
+               $product->setStock($data->stock);
+               $product->setImage($data->image);
+               $product->setCategory($data->category);
+              
+
+               $products[] = $product;
+            }
+
+            if($products){
+                return $products;
+            }else{
+                return FALSE;
+            }
+
+
+        } catch (PDOException $th) {
+            return NULL;
+        }
+    }
+
+
 }
