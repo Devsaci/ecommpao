@@ -151,30 +151,17 @@ class DataLayer
      * @return NULL Exception déclenchée
      */
     function getUsers(){
-        $sql = "SELECT * FROM ".DB_NAME.".`customers`";
+        $sql = "SELECT * FROM 'microbe_souck'.`customers`";
 
         try {
             $result = $this->connexion->prepare($sql);
             $var = $result->execute();
-            $users = [];
-
-            while($data = $result->fetch(PDO::FETCH_OBJ)){
-                $user = new UserEntity();
-                $user->setIdUser($data->id);
-                $user->setEmail($data->email);
-                $user->setSexe($data->sexe);
-                $user->setFirstname($data->firstname);
-                $user->setLastname($data->lastname);
-                $users[] = $user;
-            }
-
-            if($users){
-                return $users;
+            $data = $result->fetchAll();
+            if($data){
+                return  $data;
             }else{
                 return FALSE;
             }
-
-
         } catch (PDOException $th) {
             return NULL;
         }
