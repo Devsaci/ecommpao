@@ -22,18 +22,20 @@ class DataLayer
         }
     }
 
-/**
+    /**
      * Methode permettant de créer un utilisateur en BD 
      * @param UserEntity $user Objet métier décrivant un un utilisateur
      * @return TRUE Persistance réussie
      * @return FALSE Echec de la persistance
      * @return NULL Exception déclenchée
      */
-    function createUser(UserEntity $user){
-        $sql = "INSERT INTO ".DB_NAME.".`customers` (sexe,pseudo,email,password,firstname,lastname,dateBirth)
-        VALUES (:sexe,:pseudo,:email,:password,:firstname,:lastname,:dateBirth)";try {
-           
-            $result = $this->connexion->prepare($sql); 
+    function createUser(UserEntity $user)
+    {
+        $sql = "INSERT INTO " . DB_NAME . ".`customers` (sexe,pseudo,email,password,firstname,lastname,dateBirth)
+        VALUES (:sexe,:pseudo,:email,:password,:firstname,:lastname,:dateBirth)";
+        try {
+
+            $result = $this->connexion->prepare($sql);
 
             $data = $result->execute(array(
                 ':sexe' => $user->getSexe(),
@@ -45,20 +47,41 @@ class DataLayer
                 ':dateBirth' => $user->getDateBirth()
             ));
 
-            
-            if($data){
+
+            if ($data) {
                 return TRUE;
-            }else {
+            } else {
                 return FALSE;
-            } 
-            
-        
+            }
         } catch (PDOException $th) {
             return NULL;
         }
-
-
     }
 
 
+    /**
+     * Methode permettant de créer une categorie en BD 
+     * @param CategoryEntity $category Objet métier décrivant une categorie
+     * @return TRUE Persistance réussie
+     * @return FALSE Echec de la persistance
+     * @return NULL Exception déclenchée
+     */
+
+    function createCategory(CategoryEntity $category)
+    {
+        $sql = "INSERT INTO " . DB_NAME . ".`category`(`category`) VALUES (:name)";
+        try {
+            $result = $this->connexion->prepare($sql);
+            $data = $result->execute(array(
+                ':name' => $category->getName()
+            ));
+            if ($data) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        } catch (\PDOException $th) {
+            return NULL;
+        }
+    }
 }
