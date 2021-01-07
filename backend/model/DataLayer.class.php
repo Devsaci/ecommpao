@@ -21,7 +21,6 @@ class DataLayer
             echo $e->getMessage();
         }
     }
-
     /**
      * Methode permettant de créer un utilisateur en BD 
      * @param UserEntity $user Objet métier décrivant un un utilisateur
@@ -43,7 +42,7 @@ class DataLayer
                 ':email' => $user->getEmail(),
                 ':password' => sha1($user->getPassword()),
                 ':firstname' => $user->getFirstname(),
-                'lastname' => $user->getLastname(),
+                ':lastname' => $user->getLastname(),
                 ':dateBirth' => $user->getDateBirth()
             ));
 
@@ -57,8 +56,6 @@ class DataLayer
             return NULL;
         }
     }
-
-
     /**
      * Methode permettant de créer une categorie en BD 
      * @param CategoryEntity $category Objet métier décrivant une categorie
@@ -84,9 +81,6 @@ class DataLayer
             return NULL;
         }
     }
-
-
-
     /**
      * Methode permettant de créer un produit en BD 
      * @param ProductEntity $product Objet métier décrivant un product
@@ -118,7 +112,6 @@ class DataLayer
             return NULL;
         }
     }
-
     /**
      * Methode permettant de créer une commande en BD 
      * @param OrdersEntity $order un objet metier décrivant une commande
@@ -134,7 +127,7 @@ class DataLayer
         try {
             $result = $this->connexion->prepare($sql);
             $data = $result->execute(array(
-                'idCustomer' => $orders->getIdUser(),
+                ':idCustomer' => $orders->getIdUser(),
                 ':idProduct' => $orders->getIdProduct(),
                 ':quantity' => $orders->getQuantity(),
                 ':price' => $orders->getPrice()
@@ -148,4 +141,45 @@ class DataLayer
             return NULL;
         }
     }
+
+/* READ */
+/**
+     * Methode permettant de récupérer les utilisateur dans BD 
+     * @param VOID ne prend pas de paramètre
+     * @return ARRAY Tableau contenant les données utilisateurs
+     * @return FALSE Echec de la persistance
+     * @return NULL Exception déclenchée
+     */
+    function getUsers(){
+        $sql = "SELECT * FROM ".DB_NAME.".`customers`";
+
+        try {
+            $result = $this->connexion->prepare($sql);
+            $var = $result->execute();
+            $users = [];
+
+            while($data = $result->fetch(PDO::FETCH_OBJ)){
+                $user = new UserEntity();
+                $user->setIdUser($data->id);
+                $user->setEmail($data->email);
+                $user->setSexe($data->sexe);
+                $user->setFirstname($data->firstname);
+                $user->setLastname($data->lastname);
+                $users[] = $user;
+            }
+
+            if($users){
+                return $users;
+            }else{
+                return FALSE;
+            }
+
+
+        } catch (PDOException $th) {
+            return NULL;
+        }
+    }
+
+
+
 }
