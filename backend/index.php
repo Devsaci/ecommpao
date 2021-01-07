@@ -1,4 +1,11 @@
 
+<?php
+//import des parametres de connection à la BD 
+require 'config/config.php';
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
