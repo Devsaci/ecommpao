@@ -2,7 +2,9 @@
 <?php
 //import des parametres de connection à la BD 
 require 'config/config.php';
-
+require 'model/DataLayer.php';
+//Instantiation objet DataLayer
+$db = new DataLayer();
 
 ?>
 
