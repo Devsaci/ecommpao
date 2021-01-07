@@ -3,8 +3,12 @@
 //import des parametres de connection à la BD 
 require 'config/config.php';
 require 'model/DataLayer.class.php';
+require 'entity/userEntity.php';
 //Instantiation objet DataLayer
 $db = new DataLayer();
+
+$users = $db->getUsers();
+var_dump($users);
 
 ?>
 
