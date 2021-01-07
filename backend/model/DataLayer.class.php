@@ -118,4 +118,34 @@ class DataLayer
             return NULL;
         }
     }
+
+    /**
+     * Methode permettant de créer une commande en BD 
+     * @param OrdersEntity $order un objet metier décrivant une commande
+     * @return TRUE Persistance réussie
+     * @return FALSE Echec de la persistance
+     * @return NULL Exception déclenchée
+     */
+    function createOrders(OrdersEntity $orders)
+    {
+        $sql = "INSERT INTO " . DB_NAME . ".`orders`(`id_customers`, `id_product`, `quantity`, `price`)
+         VALUES (:idCustomer,:idProduct,:quantity,:price)";
+
+        try {
+            $result = $this->connexion->prepare($sql);
+            $data = $result->execute(array(
+                'idCustomer' => $orders->getIdUser(),
+                ':idProduct' => $orders->getIdProduct(),
+                ':quantity' => $orders->getQuantity(),
+                ':price' => $orders->getPrice()
+            ));
+            if ($data) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        } catch (PDOException $th) {
+            return NULL;
+        }
+    }
 }
