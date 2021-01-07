@@ -198,7 +198,7 @@ class DataLayer
             while($data = $result->fetch(PDO::FETCH_OBJ)){
                 $category = new CategoryEntity();
                 $category->setIdCategory($data->id);
-                $category->setName($data->category);
+                $category->setName($data->name);
 
                 $categories[] = $category;
             }
@@ -215,6 +215,5 @@ class DataLayer
         }
     }
 
-
-
+    
 }
