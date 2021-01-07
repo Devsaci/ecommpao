@@ -151,17 +151,65 @@ class DataLayer
      * @return NULL Exception déclenchée
      */
     function getUsers(){
-        $sql = "SELECT * FROM 'microbe_souck'.`customers`";
+        $sql = "SELECT * FROM ".DB_NAME.".`customers`";
 
         try {
             $result = $this->connexion->prepare($sql);
             $var = $result->execute();
-            $data = $result->fetchAll();
-            if($data){
-                return  $data;
+            $users = [];
+
+            while($data = $result->fetch(PDO::FETCH_OBJ)){
+                $user = new UserEntity();
+                $user->setIdUser($data->id);
+                $user->setEmail($data->email);
+                $user->setSexe($data->sexe);
+                $user->setFirstname($data->firstname);
+                $user->setLastname($data->lastname);
+                $users[] = $user;
+            }
+
+            if($users){
+                return $users;
             }else{
                 return FALSE;
             }
+
+        } catch (PDOException $th) {
+            return NULL;
+        }
+    }
+
+    
+    /**
+     * Methode permettant de récupérer les catégories dans BD 
+     * @param VOID ne prend pas de paramètre
+     * @return ARRAY Tableau contenant les catégories
+     * @return FALSE Echec de la persistance
+     * @return NULL Exception déclenchée
+     */
+    function getCategory(){
+        $sql = "SELECT * FROM ".DB_NAME.".`category`";
+
+        try {
+            $result = $this->connexion->prepare($sql);
+            $var = $result->execute();
+            $categories = [];
+
+            while($data = $result->fetch(PDO::FETCH_OBJ)){
+                $category = new CategoryEntity();
+                $category->setIdCategory($data->id);
+                $category->setName($data->category);
+
+                $categories[] = $category;
+            }
+
+            if($categories){
+                return $categories;
+            }else{
+                return FALSE;
+            }
+
+
         } catch (PDOException $th) {
             return NULL;
         }
