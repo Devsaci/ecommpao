@@ -84,4 +84,38 @@ class DataLayer
             return NULL;
         }
     }
+
+
+
+    /**
+     * Methode permettant de créer un produit en BD 
+     * @param ProductEntity $product Objet métier décrivant un product
+     * @return TRUE Persistance réussie
+     * @return FALSE Echec de la persistance
+     * @return NULL Exception déclenchée
+     */
+    function createProduct(ProductEntity $product)
+    {
+        $sql = "INSERT INTO " . DB_NAME . ".`product`(`name`, `description`, `price`, `stock`, `category`, `image`) 
+        VALUES (:name,:description,:price,:stock,:category,:image)";
+        try {
+            $result = $this->connexion->prepare($sql);
+            $data = $result->execute(array(
+                ':name' => $product->getName(),
+                ':description' => $product->getDescription(),
+                ':price' => $product->getPrice(),
+                ':stock' => $product->getStock(),
+                ':category' => $product->getCategory(),
+                ':image' => $product->getImage()
+            ));
+
+            if ($data) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        } catch (PDOException $th) {
+            return NULL;
+        }
+    }
 }
