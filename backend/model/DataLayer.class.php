@@ -16,11 +16,15 @@ class DataLayer
 
         try {
             $this->connexion = new PDO($var, DB_USER, DB_PASSWORD);
+  
             echo "connexion DB microbe_souck OK ";
+         
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }
+
+
     /**
      * Methode permettant de créer un utilisateur en BD 
      * @param UserEntity $user Objet métier décrivant un un utilisateur
@@ -56,6 +60,7 @@ class DataLayer
             return NULL;
         }
     }
+
     /**
      * Methode permettant de créer une categorie en BD 
      * @param CategoryEntity $category Objet métier décrivant une categorie
@@ -81,6 +86,7 @@ class DataLayer
             return NULL;
         }
     }
+
     /**
      * Methode permettant de créer un produit en BD 
      * @param ProductEntity $product Objet métier décrivant un product
@@ -112,6 +118,7 @@ class DataLayer
             return NULL;
         }
     }
+
     /**
      * Methode permettant de créer une commande en BD 
      * @param OrdersEntity $order un objet metier décrivant une commande
@@ -142,14 +149,15 @@ class DataLayer
         }
     }
 
-/* READ */
-/**
+            /* READ */
+    /**
      * Methode permettant de récupérer les utilisateur dans BD 
      * @param VOID ne prend pas de paramètre
      * @return ARRAY Tableau contenant les données utilisateurs
      * @return FALSE Echec de la persistance
      * @return NULL Exception déclenchée
      */
+
     function getUsers(){
         $sql = "SELECT * FROM ".DB_NAME.".`customers`";
 
@@ -179,6 +187,7 @@ class DataLayer
         }
     }
 
+
     
     /**
      * Methode permettant de récupérer les catégories dans BD 
@@ -187,6 +196,8 @@ class DataLayer
      * @return FALSE Echec de la persistance
      * @return NULL Exception déclenchée
      */
+
+
     function getCategory(){
         $sql = "SELECT * FROM ".DB_NAME.".`category`";
 
@@ -215,13 +226,15 @@ class DataLayer
         }
     }
 
-      /**
+
+    /**
      * Methode permettant de récupérer les produits dans BD 
      * @param VOID ne prend pas de paramètre
      * @return ARRAY Tableau contenant les produits
      * @return FALSE Echec de la persistance
      * @return NULL Exception déclenchée
      */
+
     function getProduct(){
         $sql = "SELECT * FROM ".DB_NAME.".`product`";
         //echo  $sql;exit();
@@ -239,6 +252,7 @@ class DataLayer
                $product->setStock($data->stock);
                $product->setImage($data->image);
                $product->setCategory($data->category);
+               $product->setCreatedAt($data->createdat);
               
 
                $products[] = $product;
@@ -255,6 +269,47 @@ class DataLayer
             return NULL;
         }
     }
+
+ /**
+     * Methode permettant de récupérer les commandes dans BD 
+     * @param VOID ne prend pas de paramètre
+     * @return ARRAY Tableau contenant les commande
+     * @return FALSE Echec de la persistance
+     * @return NULL Exception déclenchée
+     */
+    function getOrders(){
+        $sql = "SELECT * FROM ".DB_NAME.".`orders`";
+
+        try {
+            $result = $this->connexion->prepare($sql);
+            $var = $result->execute();
+            $orders = [];
+
+            while($data = $result->fetch(PDO::FETCH_OBJ)){
+                $order = new OrdersEntity();
+                $order->setIdOrder($data->id);
+                $order->setIdUser($data->id_customers);
+                $order->setIdProduct($data->id_product);
+                $order->setPrice($data->price);
+                $order->setQuantity($data->quantity);
+                $order->setCreatedAd($data->createdat);
+
+                $orders[] = $order;
+            }
+
+            if($orders){
+                return $orders;
+            }else{
+                return FALSE;
+            }
+
+
+        } catch (PDOException $th) {
+            return NULL;
+        }
+    }
+    
+
 
 
 }
