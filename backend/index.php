@@ -37,19 +37,27 @@ $db = new DataLayer();
 // $orders = $db->getOrders();
 // var_dump($orders);
 
-$user =new UserEntity();
-$user->setPseudo("motivation");
-$user->setEmail("zakaria@mail.com");
-$user->setFirstname("Firstname");
-$user->setLastname("Lastname");
-$user->setAdresseFacturation("AdresseFacturation");
-$user->setAdresseLivraison("AdresseLivraison");
-$user->setSexe(1);
-$user->setIdUser(2);
+// $user =new UserEntity();
+// $user->setPseudo("motivation");
+// $user->setEmail("zakaria@mail.com");
+// $user->setFirstname("Firstname");
+// $user->setLastname("Lastname");
+// $user->setAdresseFacturation("AdresseFacturation");
+// $user->setAdresseLivraison("AdresseLivraison");
+// $user->setSexe(1);
+// $user->setIdUser(2);
 
-$var = $db->updateUsers($user);
-var_dump($var); 
+// $var = $db->updateUsers($user);
+// var_dump($var); 
 
+
+
+$category =new CategoryEntity();
+$category ->setIdCategory(1);
+$category ->setName("Talons femmes");
+
+$var = $db->updateCategory($category);
+// var_dump($var); 
 
 
 

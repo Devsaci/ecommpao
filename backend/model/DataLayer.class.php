@@ -219,7 +219,7 @@ class DataLayer
             if($categories){
                 return $categories;
             }else{
-                return FALSE;
+                return FALSE;  
             }
 
 
@@ -345,8 +345,8 @@ class DataLayer
 
             $result = $this->connexion->prepare($sql);
             $var = $result->execute();
-            var_dump($sql); 
-            exit();
+            // var_dump($sql); 
+            // exit();
 
             if($var){
                 return TRUE;
@@ -359,6 +359,36 @@ class DataLayer
         }
     }
 
+
+    /**
+     * Methode permettant de mettre à jour une catégorie dans BD 
+     * @param CategoryEntity $category Objet métier décrivant une categorie
+     * @return TRUE Mise à jour réussie
+     * @return FALSE Echec de la mise à jour
+     * @return NULL Exception déclenchée
+     */
+    function updateCategory(CategoryEntity $category){
+        $sql = "UPDATE microbe_souck.`category` SET `category`=:name WHERE id=:id";
+        
+        try {
+            $result = $this->connexion->prepare($sql);
+            $var = $result->execute(array(
+                ':name' => $category->getName(),
+                ':id' => $category->getIdCategory()
+            ));
+            var_dump($sql); 
+            var_dump($var); 
+           // exit();
+            if($var){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
+
+        } catch (PDOException $th) {
+            return NULL;
+        }
+    }
 
 
 }
