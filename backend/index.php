@@ -34,8 +34,21 @@ $db = new DataLayer();
 // $products = $db->getProduct();
 // var_dump($products);
 
-$orders = $db->getOrders();
-var_dump($orders);
+// $orders = $db->getOrders();
+// var_dump($orders);
+
+$user =new UserEntity();
+$user->setPseudo("motivation");
+$user->setEmail("saci@mail.com");
+$user->setFirstname("Firstname");
+$user->setLastname("Lastname");
+$user->setSexe(1);
+$db->updateUsers($user);
+var_dump($user); 
+
+
+
+
 
 ?>
 

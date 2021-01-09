@@ -9,6 +9,7 @@
 class DataLayer
 {
     private $connexion;
+
     function __construct()
     {
 
@@ -149,7 +150,7 @@ class DataLayer
         }
     }
 
-            /* READ */
+            /* READ METHOD */
     /**
      * Methode permettant de récupérer les utilisateur dans BD 
      * @param VOID ne prend pas de paramètre
@@ -159,13 +160,15 @@ class DataLayer
      */
 
     function getUsers(){
-        $sql = "SELECT * FROM ".DB_NAME.".`customers`";
-
+        $sql =  "SELECT * FROM microbe_souck.`customers`";
+      
         try {
             $result = $this->connexion->prepare($sql);
             $var = $result->execute();
-            $users = [];
+            // var_dump($sql);exit();
+            $data = $result->fetchAll();
 
+            $users = [];
             while($data = $result->fetch(PDO::FETCH_OBJ)){
                 $user = new UserEntity();
                 $user->setIdUser($data->id);
@@ -176,8 +179,8 @@ class DataLayer
                 $users[] = $user;
             }
 
-            if($users){
-                return $users;
+            if($data){
+                return $data;
             }else{
                 return FALSE;
             }
@@ -196,7 +199,6 @@ class DataLayer
      * @return FALSE Echec de la persistance
      * @return NULL Exception déclenchée
      */
-
 
     function getCategory(){
         $sql = "SELECT * FROM ".DB_NAME.".`category`";
@@ -270,21 +272,24 @@ class DataLayer
         }
     }
 
- /**
+     /**
      * Methode permettant de récupérer les commandes dans BD 
      * @param VOID ne prend pas de paramètre
      * @return ARRAY Tableau contenant les commande
      * @return FALSE Echec de la persistance
      * @return NULL Exception déclenchée
      */
+    
     function getOrders(){
-        $sql = "SELECT * FROM ".DB_NAME.".`orders`";
-
+        $sql = "SELECT * FROM 'microbe_souck'.`orders`";
+        // var_dump($sql); exit();
+        
         try {
             $result = $this->connexion->prepare($sql);
             $var = $result->execute();
-            $orders = [];
+            
 
+            $orders = [];
             while($data = $result->fetch(PDO::FETCH_OBJ)){
                 $order = new OrdersEntity();
                 $order->setIdOrder($data->id);
@@ -293,8 +298,9 @@ class DataLayer
                 $order->setPrice($data->price);
                 $order->setQuantity($data->quantity);
                 $order->setCreatedAd($data->createdat);
-
                 $orders[] = $order;
+                
+
             }
 
             if($orders){
@@ -308,7 +314,39 @@ class DataLayer
             return NULL;
         }
     }
-    
+
+
+
+
+            /* UPDATE METHOD*/
+
+     /**
+     * Methode permettant de mettre à jour des données d'un utilisateur dans BD 
+     * @param UserEntity $user Objet métier décrivant un utilisateur
+     * @return TRUE Mise à jour réussie
+     * @return FALSE Echec de la mise à jour
+     * @return NULL Exception déclenchée
+     */
+
+    function updateUsers(UserEntity $user){
+        $sql ="UPDATE microbe_souck.`customers` SET ";
+        
+        try {
+            $sql .= " Pseudo = '".$user->getPseudo()."',";
+            $sql .= " email = '".$user->getEmail()."',";
+            $sql .= " sexe = '".$user->getSexe()."',";
+            $sql .= " firstname = '".$user->getFirstname()."',";
+            $sql .= " lastname = '".$user->getLastname()."',";
+         
+            
+            var_dump($sql); 
+            //exit();
+
+
+        } catch (PDOException $th) {
+            return NULL;
+        }
+    }
 
 
 
