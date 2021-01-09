@@ -45,6 +45,7 @@ $user->setLastname("Lastname");
 $user->setAdresseFacturation("AdresseFacturation");
 $user->setAdresseLivraison("AdresseLivraison");
 $user->setSexe(1);
+$user->setIdUser(2);
 
 $var = $db->updateUsers($user);
 var_dump($var); 

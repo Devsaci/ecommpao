@@ -341,11 +341,12 @@ class DataLayer
             $sql .= " adresse_livraison = '".$user->getAdresseLivraison()."'";   
             //var_dump($sql); 
             //exit();
-            $sql .= " WHERE id=".$user->getIdUser(); 
+            $sql .= " WHERE id =".$user->getIdUser(); 
 
             $result = $this->connexion->prepare($sql);
             $var = $result->execute();
-          
+            // var_dump($sql); 
+            // exit();
             if($var){
                 return TRUE;
             }else{
