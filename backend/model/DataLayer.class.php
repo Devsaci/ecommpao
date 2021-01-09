@@ -329,7 +329,7 @@ class DataLayer
      */
 
     function updateUsers(UserEntity $user){
-        $sql ="UPDATE microbe_souck.`customers` SET ";
+        $sql ="UPDATE 'microbe_souck'.`customers` SET ";
         
         try {
             $sql .= " Pseudo = '".$user->getPseudo()."',";
@@ -337,11 +337,9 @@ class DataLayer
             $sql .= " sexe = '".$user->getSexe()."',";
             $sql .= " firstname = '".$user->getFirstname()."',";
             $sql .= " lastname = '".$user->getLastname()."',";
-         
-            
+                 
             var_dump($sql); 
             //exit();
-
 
         } catch (PDOException $th) {
             return NULL;
