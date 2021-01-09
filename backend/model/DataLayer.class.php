@@ -337,7 +337,7 @@ class DataLayer
             $sql .= " sexe = '".$user->getSexe()."',";
             $sql .= " firstname = '".$user->getFirstname()."',";
             $sql .= " lastname = '".$user->getLastname()."',";
-            $sql .= " adresse_facturation = '".$user->getAdresseFactutation()."',";
+            $sql .= " adresse_facturation = '".$user->getAdresseFacturation()."',";
             $sql .= " adresse_livraison = '".$user->getAdresseLivraison()."'";
                  
             var_dump($sql); 

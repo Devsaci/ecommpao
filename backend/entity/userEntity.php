@@ -26,7 +26,7 @@ class UserEntity
 
     protected string  $adresseLivraison;
 
-    protected string  $adresseFactutation;
+    protected string  $adresseFacturation;
 
     protected ?string  $tel;
 
@@ -120,6 +120,14 @@ class UserEntity
         $this->description = $description;
     }
 
+    function getAdresseFacturation() { 
+        return $this->adresseFacturation; 
+   } 
+
+   function setAdresseFacturation($adresseFacturation) {  
+       $this->adresseFacturation = $adresseFacturation; 
+   } 
+   
     function getAdresseLivraison()
     {
         return $this->adresseLivraison;
@@ -130,15 +138,7 @@ class UserEntity
         $this->adresseLivraison = $adresseLivraison;
     }
 
-    function getAdresseFactutation()
-    {
-        return $this->adresseFactutation;
-    }
-
-    function setAdresseFactutation($adresseFactutation)
-    {
-        $this->adresseFactutation = $adresseFactutation;
-    }
+   
 
     function getTel()
     {
@@ -170,3 +170,5 @@ class UserEntity
         $this->createdAt = $createdAt;
     }
 }
+
+
