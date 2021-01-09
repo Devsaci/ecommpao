@@ -368,7 +368,7 @@ class DataLayer
      * @return NULL Exception déclenchée
      */
     function updateCategory(CategoryEntity $category){
-        $sql = "UPDATE microbe_souck.`category` SET `category`=:name WHERE id=:id";
+        $sql = "UPDATE microbe_souck.`category` SET `name`=:name WHERE id=:id";
         
         try {
             $result = $this->connexion->prepare($sql);
