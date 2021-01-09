@@ -329,7 +329,7 @@ class DataLayer
      */
 
     function updateUsers(UserEntity $user){
-        $sql ="UPDATE 'microbe_souck'.`customers` SET ";
+        $sql ="UPDATE microbe_souck.`customers` SET ";
         
         try {
             $sql .= " Pseudo = '".$user->getPseudo()."',";
@@ -347,6 +347,7 @@ class DataLayer
             $var = $result->execute();
             // var_dump($sql); 
             // exit();
+
             if($var){
                 return TRUE;
             }else{

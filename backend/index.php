@@ -39,7 +39,7 @@ $db = new DataLayer();
 
 $user =new UserEntity();
 $user->setPseudo("motivation");
-$user->setEmail("saci@mail.com");
+$user->setEmail("zakaria@mail.com");
 $user->setFirstname("Firstname");
 $user->setLastname("Lastname");
 $user->setAdresseFacturation("AdresseFacturation");
