@@ -338,10 +338,19 @@ class DataLayer
             $sql .= " firstname = '".$user->getFirstname()."',";
             $sql .= " lastname = '".$user->getLastname()."',";
             $sql .= " adresse_facturation = '".$user->getAdresseFacturation()."',";
-            $sql .= " adresse_livraison = '".$user->getAdresseLivraison()."'";
-                 
-            var_dump($sql); 
+            $sql .= " adresse_livraison = '".$user->getAdresseLivraison()."'";   
+            //var_dump($sql); 
             //exit();
+            $sql .= " WHERE id=".$user->getIdUser(); 
+
+            $result = $this->connexion->prepare($sql);
+            $var = $result->execute();
+          
+            if($var){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
 
         } catch (PDOException $th) {
             return NULL;

@@ -42,13 +42,12 @@ $user->setPseudo("motivation");
 $user->setEmail("saci@mail.com");
 $user->setFirstname("Firstname");
 $user->setLastname("Lastname");
-
 $user->setAdresseFacturation("AdresseFacturation");
 $user->setAdresseLivraison("AdresseLivraison");
-
 $user->setSexe(1);
-$db->updateUsers($user);
-var_dump($user); 
+
+$var = $db->updateUsers($user);
+var_dump($var); 
 
 
 
