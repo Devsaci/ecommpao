@@ -171,7 +171,7 @@ class DataLayer
         try {
             $result = $this->connexion->prepare($sql);
             $var = $result->execute();
-            $data = $result->fetch();
+            $data = $result->fetchAll();
             // $users = [];
             // while ($data = $result->fetch(PDO::FETCH_OBJ)) {
             //     $user = new UserEntity();
