@@ -24,9 +24,8 @@ require 'entity/ordersEntity.php';
 //Instantiation objet DataLayer
 $db = new DataLayer();
 
-// $users = $db->getUsers();
-// var_dump($users);
-
+$users = $db->getUsers();
+var_dump($users);
 
 // $categories = $db->getCategory();
 // var_dump($categories);
@@ -52,14 +51,21 @@ $db = new DataLayer();
 
 
 
-$category =new CategoryEntity();
-$category ->setIdCategory(1);
-$category ->setName("Talons femmes");
+// $category =new CategoryEntity();
+// $category ->setIdCategory(1);
+// $category ->setName("Talons femmes");
 
-$var = $db->updateCategory($category);
+// $var = $db->updateCategory($category);
 // var_dump($var); 
 
 
+// $product = new ProductEntity();
+// $product->setIdproduct(1);
+// $product->setName('name');
+// $product->setDescription(':description');
+// $product->setPrice(':price');
+// $product->setStock(':stock');
+// $product->setImage(':category');
 
 
 ?>
