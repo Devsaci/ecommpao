@@ -45,8 +45,8 @@ $db = new DataLayer();
 
 
 
-$users = $db->getUsers();
-var_dump($users);
+// $users = $db->getUsers();
+// var_dump($users);
 
 // $categories = $db->getCategory();
 // var_dump($categories);
