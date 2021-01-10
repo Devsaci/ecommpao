@@ -24,6 +24,27 @@ require 'entity/ordersEntity.php';
 //Instantiation objet DataLayer
 $db = new DataLayer();
 
+
+
+
+
+
+
+
+
+// $order = new OrdersEntity();
+// $order->setIdUser(11);
+// $order->setIdProduct(30);
+// $order->setQuantity(5);
+// $order->setPrice(57.77);
+
+// $var = $db->createOrders($order);
+// var_dump($var);
+// var_dump($order);
+
+
+
+
 $users = $db->getUsers();
 var_dump($users);
 

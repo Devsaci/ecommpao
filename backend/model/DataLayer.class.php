@@ -133,13 +133,18 @@ class DataLayer
 
         try {
             $result = $this->connexion->prepare($sql);
-            
+
             $data = $result->execute(array(
                 ':idCustomer' => $orders->getIdUser(),
                 ':idProduct' => $orders->getIdProduct(),
                 ':quantity' => $orders->getQuantity(),
                 ':price' => $orders->getPrice()
             ));
+
+            var_dump($sql); 
+            var_dump($data); 
+            //exit();
+
             if ($data) {
                 return TRUE;
             } else {
@@ -166,24 +171,24 @@ class DataLayer
         try {
             $result = $this->connexion->prepare($sql);
             $var = $result->execute();
+            $data = $result->fetch();
+            // $users = [];
+            // while ($data = $result->fetch(PDO::FETCH_OBJ)) {
+            //     $user = new UserEntity();
+            //     $user->setIdUser($data->id);
+            //     $user->setEmail($data->email);
+            //     $user->setSexe($data->sexe);
+            //     $user->setFirstname($data->firstname);
+            //     $user->setLastname($data->lastname);
+            //     $users[] = $user;
+            // }
 
-            $users = [];
-            while ($data = $result->fetch(PDO::FETCH_OBJ)) {
-                $user = new UserEntity();
-                $user->setIdUser($data->id);
-                $user->setEmail($data->email);
-                $user->setSexe($data->sexe);
-                $user->setFirstname($data->firstname);
-                $user->setLastname($data->lastname);
-                $users[] = $user;
-            }
-
-            // var_dump($sql); 
+            var_dump($sql); 
             // var_dump($var); 
             // exit();
 
-            if ($users) {
-                return $users;
+            if ($data) {
+                return $data;
             } else {
                 return FALSE;
             }
