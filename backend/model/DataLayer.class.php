@@ -171,24 +171,23 @@ class DataLayer
         try {
             $result = $this->connexion->prepare($sql);
             $var = $result->execute();
-            $data = $result->fetchAll();
-            // $users = [];
-            // while ($data = $result->fetch(PDO::FETCH_OBJ)) {
-            //     $user = new UserEntity();
-            //     $user->setIdUser($data->id);
-            //     $user->setEmail($data->email);
-            //     $user->setSexe($data->sexe);
-            //     $user->setFirstname($data->firstname);
-            //     $user->setLastname($data->lastname);
-            //     $users[] = $user;
-            // }
+            $users = [];
+            while ($data = $result->fetch(PDO::FETCH_OBJ)) {
+                $user = new UserEntity();
+                $user->setIdUser($data->id);
+                $user->setEmail($data->email);
+                $user->setSexe($data->sexe);
+                $user->setFirstname($data->firstname);
+                $user->setLastname($data->lastname);
+                $users[] = $user;
+            }
 
-            var_dump($sql); 
+            // var_dump($sql); 
             // var_dump($var); 
-            // exit();
+            //exit();
 
-            if ($data) {
-                return $data;
+            if ($users) {
+                return $users;
             } else {
                 return FALSE;
             }
