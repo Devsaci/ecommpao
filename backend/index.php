@@ -118,13 +118,20 @@ $db = new DataLayer();
 
 
 
-$product =new ProductEntity();
-$product->setIdProduct(24);
-$var = $db->deleteProduct($product);
+// $product =new ProductEntity();
+// $product->setIdProduct(24);
+// $var = $db->deleteProduct($product);
+
+
+// $category =new CategoryEntity();
+// $category->setIdCategory(24);
+// $var = $db-> deleteCategory($category);
 
 
 
-
+$order =new OrdersEntity();
+$order->setIdOrder(25);
+$var = $db-> deleteOrders($order);
 
 
 

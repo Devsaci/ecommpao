@@ -523,8 +523,8 @@ class DataLayer
             $result = $this->connexion->prepare($sql);
             $var = $result->execute();
 
-            var_dump($sql);
-            var_dump($var);
+            // var_dump($sql);
+            // var_dump($var);
             // exit();
 
             if ($var) {
@@ -536,4 +536,68 @@ class DataLayer
             return NULL;
         }
     }
+
+ /**
+     * Methode permettant de supprimer une categorie dans BD 
+     * @param CategoryEntity $user Objet métier décrivant une categorie
+     * @return TRUE Suppression réussie
+     * @return FALSE Echec de la suppression
+     * @return NULL Exception déclenchée
+     */
+    function deleteCategory(CategoryEntity $category){
+        $sql = "DELETE FROM ".DB_NAME.".`category` WHERE id=".$category->getIdCategory();
+
+        try {
+            $result = $this->connexion->prepare($sql);
+            $var = $result->execute();
+
+            // var_dump($sql);
+            // var_dump($var);
+            // exit();
+
+            if($var){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
+        } catch (PDOException $th) {
+            return NULL;
+        }
+    }
+
+
+    /**
+     * Methode permettant de supprimer une commande dans BD 
+     * @param OrdersEntity $order Objet métier décrivant une commande
+     * @return TRUE Suppression réussie
+     * @return FALSE Echec de la suppression
+     * @return NULL Exception déclenchée
+     */
+    function deleteOrders(OrdersEntity $order){
+        $sql = "DELETE FROM ".DB_NAME.".`orders` WHERE id=".$order->getIdOrder();
+
+        try {
+            $result = $this->connexion->prepare($sql);
+            $var = $result->execute();
+            
+            var_dump($sql);
+            var_dump($var);
+           // exit();
+
+            if($var){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
+        } catch (PDOException $th) {
+            return NULL;
+        }
+    }
+
+
+
+ 
+
 }
+
+?>
