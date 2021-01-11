@@ -16,14 +16,14 @@ class DataLayer
 
         try {
             $this->connexion = new PDO($var, DB_USER, DB_PASSWORD);
-            echo "connexion DB microbe_souck OK ".'<br>';
+            echo "connexion DB microbe_souck OK " . '<br>';
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }
 
 
-           /* CREAT Method */
+    /* CREAT Method */
 
     /**
      * Methode permettant de créer un utilisateur en BD 
@@ -141,8 +141,8 @@ class DataLayer
                 ':price' => $orders->getPrice()
             ));
 
-            var_dump($sql); 
-            var_dump($data); 
+            var_dump($sql);
+            var_dump($data);
             //exit();
 
             if ($data) {
@@ -222,8 +222,8 @@ class DataLayer
                 $categories[] = $category;
             }
 
-            var_dump($sql); 
-            var_dump($var); 
+            var_dump($sql);
+            var_dump($var);
             exit();
 
             if ($categories) {
@@ -247,7 +247,7 @@ class DataLayer
 
     function getProduct()
     {
-        $sql = "SELECT * FROM ". DB_NAME .".`product`";
+        $sql = "SELECT * FROM " . DB_NAME . ".`product`";
         //echo  $sql;exit();
         try {
             $result = $this->connexion->prepare($sql);
@@ -349,15 +349,14 @@ class DataLayer
             $sql .= " lastname = '" . $user->getLastname() . "',";
             $sql .= " adresse_facturation = '" . $user->getAdresseFacturation() . "',";
             $sql .= " adresse_livraison = '" . $user->getAdresseLivraison() . "'";
-            
-          
             $sql .= " WHERE id =" . $user->getIdUser();
 
             $result = $this->connexion->prepare($sql);
             $var = $result->execute();
-            var_dump($sql); 
-            var_dump($var); 
-            exit();
+
+            // var_dump($sql); 
+            // var_dump($var); 
+            // exit();
 
             if ($var) {
                 return TRUE;
@@ -424,9 +423,46 @@ class DataLayer
                 ':image' => $product->getImage()
             ));
 
+            // var_dump($sql);
+            // var_dump($var);
+            // exit();
+
+            if ($var) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        } catch (PDOException $th) {
+            return NULL;
+        }
+    }
+
+
+    /**
+     * Methode permettant de mettre à jour une commande dans BD 
+     * @param OrdersEntity $order Objet métier décrivant une commande
+     * @return TRUE Mise à jour réussie
+     * @return FALSE Echec de la mise à jour
+     * @return NULL Exception déclenchée
+     */
+    function updateOrders(OrdersEntity $order)
+    {
+        $sql = "UPDATE " . DB_NAME . ".`orders` SET `id_customers`=:id_customers, `id_product`=:id_product, `quantity`=:quantity, `price`=:price
+         WHERE id=:id";
+        try {
+            $result = $this->connexion->prepare($sql);
+            $var = $result->execute(array(
+
+                ':id' => $order->getIdOrder(),
+                ':id_customers' => $order->getIduser(),
+                ':id_product' => $order->getIdproduct(),             
+                ':quantity' => $order->getQuantity(),
+                ':price' => $order->getPrice()             
+            ));
+
             var_dump($sql);
             var_dump($var);
-            // exit();
+            //exit();
 
             if ($var) {
                 return TRUE;
