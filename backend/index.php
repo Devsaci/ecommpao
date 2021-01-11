@@ -112,11 +112,15 @@ $db = new DataLayer();
 // print_r($order);
 
 
-$user =new UserEntity();
-$user->setIdUser(40);
-$var = $db->deleteUsers($user);
+// $user =new UserEntity();
+// $user->setIdUser(40);
+// $var = $db->deleteUsers($user);
 
 
+
+$product =new ProductEntity();
+$product->setIdProduct(24);
+$var = $db->deleteProduct($product);
 
 
 

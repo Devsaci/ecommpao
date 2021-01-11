@@ -492,9 +492,9 @@ class DataLayer
             $result = $this->connexion->prepare($sql);
             $var = $result->execute();
 
-            var_dump($sql);
-            var_dump($var);
-            exit();
+            // var_dump($sql);
+            // var_dump($var);
+            // exit();
 
             if ($var) {
                 return TRUE;
@@ -508,7 +508,32 @@ class DataLayer
 
 
 
+    /**
+     * Methode permettant de supprimer un produit dans BD 
+     * @param ProductEntity $product Objet métier décrivant un produit
+     * @return TRUE Suppression réussie
+     * @return FALSE Echec de la suppression
+     * @return NULL Exception déclenchée
+     */
+    function deleteProduct(ProductEntity $product)
+    {
+        $sql = "DELETE FROM " . DB_NAME . ".`product` WHERE id=" . $product->getIdProduct();
 
+        try {
+            $result = $this->connexion->prepare($sql);
+            $var = $result->execute();
 
-    
+            var_dump($sql);
+            var_dump($var);
+            // exit();
+
+            if ($var) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        } catch (PDOException $th) {
+            return NULL;
+        }
+    }
 }
