@@ -355,9 +355,9 @@ class DataLayer
 
             $result = $this->connexion->prepare($sql);
             $var = $result->execute();
-            // var_dump($sql); 
-            // var_dump($var); 
-            // exit();
+            var_dump($sql); 
+            var_dump($var); 
+            exit();
 
             if ($var) {
                 return TRUE;
@@ -422,8 +422,12 @@ class DataLayer
                 ':stock' => $product->getStock(),
                 ':category' => $product->getCategory(),
                 ':image' => $product->getImage()
-
             ));
+
+            var_dump($sql);
+            var_dump($var);
+            // exit();
+
             if ($var) {
                 return TRUE;
             } else {

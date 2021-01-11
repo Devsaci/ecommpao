@@ -32,17 +32,17 @@ $db = new DataLayer();
 
 
 
-$order = new OrdersEntity();
-$order->setIdUser(11);
-$order->setIdProduct(30);
-$order->setQuantity(5);
-$order->setPrice(57.77);
+// $order = new OrdersEntity();
+// $order->setIdUser(11);
+// $order->setIdProduct(30);
+// $order->setQuantity(5);
+// $order->setPrice(57.77);
 
-$var = $db->createOrders($order);
-//var_dump($var);
-// var_dump($order);
-echo "<pre>";
-print_r($order);
+// $var = $db->createOrders($order);
+// //var_dump($var);
+// // var_dump($order);
+// echo "<pre>";
+// print_r($order);
 
 
 
@@ -82,13 +82,19 @@ print_r($order);
 // var_dump($var); 
 
 
-// $product = new ProductEntity();
-// $product->setIdproduct(1);
-// $product->setName('name');
-// $product->setDescription(':description');
-// $product->setPrice(':price');
-// $product->setStock(':stock');
-// $product->setImage(':category');
+$product = new ProductEntity();
+$product->setIdproduct(1);
+$product->setName(' new talons hauts');
+$product->setDescription(' new SARAIRIS 2020 mode été plate-forme talons hauts compensés décontracté confortable lumière loisirs chaussures femme sandales femmes chaussures femme');
+$product->setPrice(79.00);
+$product->setStock(201);
+$product->setCategory(1);
+$product->setImage('b4.png');
+
+$var = $db->updateProduct($product);
+var_dump($var); 
+echo "<pre>";
+print_r($product);
 
 
 ?>
