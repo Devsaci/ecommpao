@@ -455,13 +455,13 @@ class DataLayer
 
                 ':id' => $order->getIdOrder(),
                 ':id_customers' => $order->getIduser(),
-                ':id_product' => $order->getIdproduct(),             
+                ':id_product' => $order->getIdproduct(),
                 ':quantity' => $order->getQuantity(),
-                ':price' => $order->getPrice()             
+                ':price' => $order->getPrice()
             ));
 
-            var_dump($sql);
-            var_dump($var);
+            // var_dump($sql);
+            // var_dump($var);
             //exit();
 
             if ($var) {
@@ -473,4 +473,42 @@ class DataLayer
             return NULL;
         }
     }
+
+
+    /* DELET METHOD */
+
+    /**
+     * Methode permettant de supprimer un utilisateur dans BD 
+     * @param UserEntity $user Objet métier décrivant un utilisateur
+     * @return TRUE Suppression réussie
+     * @return FALSE Echec de la suppression
+     * @return NULL Exception déclenchée
+     */
+    function deleteUsers(UserEntity $user)
+    {
+        $sql = "DELETE FROM " . DB_NAME . ".`customers` WHERE id=" . $user->getIdUser();
+
+        try {
+            $result = $this->connexion->prepare($sql);
+            $var = $result->execute();
+
+            var_dump($sql);
+            var_dump($var);
+            exit();
+
+            if ($var) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        } catch (PDOException $th) {
+            return NULL;
+        }
+    }
+
+
+
+
+
+    
 }

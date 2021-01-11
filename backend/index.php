@@ -98,18 +98,24 @@ $db = new DataLayer();
 
 
 
-$order = new OrdersEntity;
+// $order = new OrdersEntity;
 
-$order->setIdOrder(1);
-$order->setIdUser(11);
-$order->setIdProduct(29);
-$order->setQuantity(11);
-$order->setPrice(57.99);
+// $order->setIdOrder(1);
+// $order->setIdUser(11);
+// $order->setIdProduct(29);
+// $order->setQuantity(11);
+// $order->setPrice(57.99);
 
-$var = $db->updateOrders($order);
-var_dump($var); 
-echo "<pre>";
-print_r($order);
+// $var = $db->updateOrders($order);
+// var_dump($var); 
+// echo "<pre>";
+// print_r($order);
+
+
+$user =new UserEntity();
+$user->setIdUser(40);
+$var = $db->deleteUsers($user);
+
 
 
 
