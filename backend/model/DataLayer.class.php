@@ -16,7 +16,7 @@ class DataLayer
 
         try {
             $this->connexion = new PDO($var, DB_USER, DB_PASSWORD);
-            echo "connexion DB microbe_souck OK ";
+            echo "connexion DB microbe_souck OK ".'<br>';
         } catch (PDOException $e) {
             echo $e->getMessage();
         }

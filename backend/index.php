@@ -32,15 +32,17 @@ $db = new DataLayer();
 
 
 
-// $order = new OrdersEntity();
-// $order->setIdUser(11);
-// $order->setIdProduct(30);
-// $order->setQuantity(5);
-// $order->setPrice(57.77);
+$order = new OrdersEntity();
+$order->setIdUser(11);
+$order->setIdProduct(30);
+$order->setQuantity(5);
+$order->setPrice(57.77);
 
-// $var = $db->createOrders($order);
-// var_dump($var);
+$var = $db->createOrders($order);
+//var_dump($var);
 // var_dump($order);
+echo "<pre>";
+print_r($order);
 
 
 
