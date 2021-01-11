@@ -23,6 +23,9 @@ class DataLayer
     }
 
 
+
+
+
     /* CREAT Method */
 
     /**
@@ -133,12 +136,12 @@ class DataLayer
 
         try {
             $result = $this->connexion->prepare($sql);
-
-            $data = $result->execute(array(
+            $data = $result->fetch(PDO::FETCH_OBJ);
+            $data = $result->execute(array(               
                 ':idCustomer' => $orders->getIdUser(),
                 ':idProduct' => $orders->getIdProduct(),
                 ':quantity' => $orders->getQuantity(),
-                ':price' => $orders->getPrice()
+                ':price' => $orders->getPrice()              
             ));
 
             var_dump($sql);
