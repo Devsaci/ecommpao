@@ -537,15 +537,16 @@ class DataLayer
         }
     }
 
- /**
+    /**
      * Methode permettant de supprimer une categorie dans BD 
      * @param CategoryEntity $user Objet métier décrivant une categorie
      * @return TRUE Suppression réussie
      * @return FALSE Echec de la suppression
      * @return NULL Exception déclenchée
      */
-    function deleteCategory(CategoryEntity $category){
-        $sql = "DELETE FROM ".DB_NAME.".`category` WHERE id=".$category->getIdCategory();
+    function deleteCategory(CategoryEntity $category)
+    {
+        $sql = "DELETE FROM " . DB_NAME . ".`category` WHERE id=" . $category->getIdCategory();
 
         try {
             $result = $this->connexion->prepare($sql);
@@ -555,9 +556,9 @@ class DataLayer
             // var_dump($var);
             // exit();
 
-            if($var){
+            if ($var) {
                 return TRUE;
-            }else{
+            } else {
                 return FALSE;
             }
         } catch (PDOException $th) {
@@ -573,31 +574,25 @@ class DataLayer
      * @return FALSE Echec de la suppression
      * @return NULL Exception déclenchée
      */
-    function deleteOrders(OrdersEntity $order){
-        $sql = "DELETE FROM ".DB_NAME.".`orders` WHERE id=".$order->getIdOrder();
+    function deleteOrders(OrdersEntity $order)
+    {
+        $sql = "DELETE FROM " . DB_NAME . ".`orders` WHERE id=" . $order->getIdOrder();
 
         try {
             $result = $this->connexion->prepare($sql);
             $var = $result->execute();
-            
+
             var_dump($sql);
             var_dump($var);
-           // exit();
+            // exit();
 
-            if($var){
+            if ($var) {
                 return TRUE;
-            }else{
+            } else {
                 return FALSE;
             }
         } catch (PDOException $th) {
             return NULL;
         }
     }
-
-
-
- 
-
 }
-
-?>
