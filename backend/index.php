@@ -27,22 +27,43 @@ $db = new DataLayer();
 
 
 
+$user = new UserEntity();
+$user->setEmail("test3@email.com");
+$user->setPassword("1254");
+$var = $db->authentifier($user);
 
-
-
-
-
-$order = new OrdersEntity();
-$order->setIdUser(11);
-$order->setIdProduct(30);
-$order->setQuantity(50);
-$order->setPrice(200);
-
-$var = $db->createOrders($order);
-// var_dump($var);
-// var_dump($order);
+var_dump($var);
 echo "<pre>";
-print_r($order);
+print_r($var);
+
+
+
+
+// $user1 = new UserEntity();
+// $user1->setSexe(1);
+// $user1->setPseudo("SACI");
+// $user1->setEmail("test3@email.com");
+// $user1->setPassword("1234");
+// $user1->setFirstname("toto");
+// $user1->setLastname("toto");;
+// $var = $db->createUser($user1);
+
+// echo "<pre>";
+// print_r($user1);
+
+
+
+// $order = new OrdersEntity();
+// $order->setIdUser(11);
+// $order->setIdProduct(30);
+// $order->setQuantity(50);
+// $order->setPrice(200);
+
+// $var = $db->createOrders($order);
+// // var_dump($var);
+// // var_dump($order);
+// echo "<pre>";
+// print_r($order);
 
 
 

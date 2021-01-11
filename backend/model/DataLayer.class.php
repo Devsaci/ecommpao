@@ -23,6 +23,48 @@ class DataLayer
     }
 
 
+    /**
+     * Méthode permettant d'authentifier un utilisateur 
+     * @param UserEntity $user Objet métier décrivant un utilisateur 
+     * @return UserEntity $user Objet métier décrivant l'utilisateur authentifié
+     * @return FALSE En cas d'échec d'authentification
+     * @return NULL Exception déclenchée 
+     */
+    function authentifier(UserEntity $user)
+    {
+        $sql = "SELECT * FROM " . DB_NAME . ".`customers` WHERE email = :email";
+
+        try {
+            $result = $this->connexion->prepare($sql);
+            $var = $result->execute(array(
+                ':email'=>$user->getEmail()
+            ));
+
+            $data = $result->fetch(PDO::FETCH_OBJ);
+            // var_dump($data );
+
+            if($data && ($data->password == sha1($user->getPassword()))){
+                // authentification réussie
+                $user->setIdUser($data->id);
+                $user->setSexe($data->sexe);
+                $user->setFirstname($data->firstname);
+                $user->setLastname($data->lastname);
+                $user->setPassword(NULL);
+                $user->setAdresseFacturation($data->adresse_facturation);
+                $user->setAdresseLivraison($data->adresse_livraison);
+                $user->setTel($data->tel);
+                // $user->setDateBirth($data->dateBirth);
+
+                return $user;
+            } else {
+                // authentification échouée
+                return FALSE;
+            }
+        } catch (PDOException $th) {
+            return NULL;
+        }
+    }
+
 
 
 
@@ -37,12 +79,12 @@ class DataLayer
      */
     function createUser(UserEntity $user)
     {
-        $sql = "INSERT INTO " . DB_NAME . ".`customers` (sexe,pseudo,email,password,firstname,lastname,dateBirth)
-        VALUES (:sexe,:pseudo,:email,:password,:firstname,:lastname,:dateBirth)";
+        $sql = "INSERT INTO " . DB_NAME . ".`customers` (sexe,pseudo,email,password,firstname,lastname)
+        VALUES (:sexe,:pseudo,:email,:password,:firstname,:lastname)";
         try {
 
             $result = $this->connexion->prepare($sql);
-
+            $data = $result->fetch(PDO::FETCH_OBJ);
             $data = $result->execute(array(
                 ':sexe' => $user->getSexe(),
                 ':pseudo' => $user->getPseudo(),
@@ -50,9 +92,12 @@ class DataLayer
                 ':password' => sha1($user->getPassword()),
                 ':firstname' => $user->getFirstname(),
                 ':lastname' => $user->getLastname(),
-                ':dateBirth' => $user->getDateBirth()
             ));
+            
 
+            var_dump($sql);
+            var_dump($data);
+            //exit();
 
             if ($data) {
                 return TRUE;
@@ -137,11 +182,11 @@ class DataLayer
         try {
             $result = $this->connexion->prepare($sql);
             $data = $result->fetch(PDO::FETCH_OBJ);
-            $data = $result->execute(array(               
+            $data = $result->execute(array(
                 ':idCustomer' => $orders->getIdUser(),
                 ':idProduct' => $orders->getIdProduct(),
                 ':quantity' => $orders->getQuantity(),
-                ':price' => $orders->getPrice()              
+                ':price' => $orders->getPrice()
             ));
 
             var_dump($sql);
