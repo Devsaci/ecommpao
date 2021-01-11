@@ -129,9 +129,9 @@ $db = new DataLayer();
 
 
 
-$order =new OrdersEntity();
-$order->setIdOrder(25);
-$var = $db-> deleteOrders($order);
+// $order =new OrdersEntity();
+// $order->setIdOrder(25);
+// $var = $db-> deleteOrders($order);
 
 
 

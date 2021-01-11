@@ -582,8 +582,8 @@ class DataLayer
             $result = $this->connexion->prepare($sql);
             $var = $result->execute();
 
-            var_dump($sql);
-            var_dump($var);
+            // var_dump($sql);
+            // var_dump($var);
             // exit();
 
             if ($var) {
