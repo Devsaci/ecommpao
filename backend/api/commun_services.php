@@ -53,9 +53,12 @@ function produceResult($result){
 function clearData($objetMetier){
     $objetMetier = (array)$objetMetier; 
     // (TODO) caster ? = force le typage ? 
-  
+    $result=[];
 
-    return $objetMetier;
+    foreach ($objetMetier as $key => $value) {
+        $result[substr($key,3)]= $value;
+    }
+    return $result;
 }
 
 
