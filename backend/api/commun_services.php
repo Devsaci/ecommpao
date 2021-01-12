@@ -31,7 +31,9 @@ function produceErrorRequest(){
 }
 
 
-
+function produceResult($result){
+    answer(['status'=>200,'result'=>$result]);
+}
 
 
 
