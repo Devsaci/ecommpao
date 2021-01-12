@@ -17,7 +17,6 @@ if (!isset($_REQUEST['email']) || !isset($_REQUEST['password'])) {
     return;
 }
 
-
 try {
     $user = new UserEntity();
     $user->setEmail($_REQUEST['email']);
@@ -37,4 +36,28 @@ try {
 } catch (Exception $th) {
     produceError($th->getMessage());
 }
+
+
+//Request URL : 
+//http://localhost/ecommpao/backend/api/authentifier.php?email=test@email.com&password=1234
+//Respons => navig
+/* {
+    "status": 200,
+    "result": {
+      "ser": "57",
+      "il": "test@email.com",
+      "e": 1,
+      "sword": null,
+      "stname": "toto",
+      "tname": "toto",
+      "esseLivraison": "",
+      "esseFacturation": "",
+      "": null
+    },
+    "args": {
+      "email": "test@email.com"
+    },
+    "time": "12/01/2021 14:49:51"
+  }
+ */
 
