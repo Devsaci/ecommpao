@@ -24,3 +24,15 @@ function produceError($message){
 function produceErrorAuth(){
     answer(['status'=>401,'message'=>'Authentification requis !']);
 }
+
+
+function produceErrorRequest(){
+    answer(['status'=>400,'message'=>'Requête mal formulée']);
+}
+
+
+
+
+
+
+
