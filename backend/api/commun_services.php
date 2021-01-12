@@ -15,3 +15,5 @@ require ENTITY.SP."categoryEntity.php";
 require ENTITY.SP."productEntity.php";
 require ENTITY.SP."ordersEntity.php";
 
+
+$db = new DataLayer();
