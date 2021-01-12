@@ -19,10 +19,20 @@ if (!isset($_REQUEST['email']) || !isset($_REQUEST['password'])) {
 
 
 try {
+    $user = new UserEntity();
+    $user->setEmail($_REQUEST['email']);
+    $user->setPassword($_REQUEST['password']);
+    $dataAuth = $db->authentifier($user);
+    if($dataAuth){
+        // Authentification réussie
+        $_SESSION['ident']=$dataAuth;
+        produceResult(clearData($dataAuth));
+    }else {
+        //Echec d'autentification
+        produceError("Email ou password incorrecte.");
+    }
 
 
-
-    
     //code...
 } catch (Exception $th) {
     produceError($th->getMessage());
