@@ -17,3 +17,7 @@ require ENTITY.SP."ordersEntity.php";
 
 
 $db = new DataLayer();
+
+function produceError($message){
+    answer(['status'=>404,'message'=>$message]);
+}
