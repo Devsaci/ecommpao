@@ -40,6 +40,7 @@ function produceErrorRequest(){
 
 
 function produceResult($result){
+    $result = clearData($result);
     answer(['status'=>200,'result'=>$result]);
 }
 
