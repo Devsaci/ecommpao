@@ -18,6 +18,14 @@ require ENTITY.SP."ordersEntity.php";
 
 $db = new DataLayer();
 
+function answer($response){
+    global $_REQUEST;
+    $response['args'] = $_REQUEST;
+    unset($response['args']['password']);
+    $response['time'] = date('d/m/Y H:i:s');
+    echo json_encode($response);
+}
+
 function produceError($message){
     answer(['status'=>404,'message'=>$message]);
 }
