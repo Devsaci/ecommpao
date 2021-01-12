@@ -21,3 +21,6 @@ $db = new DataLayer();
 function produceError($message){
     answer(['status'=>404,'message'=>$message]);
 }
+function produceErrorAuth(){
+    answer(['status'=>401,'message'=>'Authentification requis !']);
+}
