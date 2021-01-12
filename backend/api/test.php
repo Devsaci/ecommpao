@@ -2,8 +2,8 @@
 require 'commun_services.php';
 // produceError("Erreur de Test");
 // produceErrorAuth();
-produceErrorRequest();
-
+// produceErrorRequest();
+produceResult(['!?' ]);
 
 
 ?>
