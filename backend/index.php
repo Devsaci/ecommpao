@@ -27,14 +27,14 @@ $db = new DataLayer();
 
 
 
-$user = new UserEntity();
-$user->setEmail("test3@email.com");
-$user->setPassword("1234");
-$var = $db->authentifier($user);
+// $user = new UserEntity();
+// $user->setEmail("test3@email.com");
+// $user->setPassword("1234");
+// $var = $db->authentifier($user);
 
-var_dump($var);
-echo "<pre>";
-print_r($var);
+// var_dump($var);
+// echo "<pre>";
+// print_r($var);
 
 
 
