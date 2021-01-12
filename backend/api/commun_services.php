@@ -8,5 +8,10 @@ define("CONFIG", ROOT.SP."config");
 define("MODEL", ROOT.SP."model");
 define("ENTITY", ROOT.SP."entity");
 
-
+require CONFIG.SP."config.php";
+require MODEL.SP."DataLayer.class.php";
+require ENTITY.SP."userEntity.php";
+require ENTITY.SP."categoryEntity.php";
+require ENTITY.SP."productEntity.php";
+require ENTITY.SP."ordersEntity.php";
 
