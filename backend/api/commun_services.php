@@ -44,5 +44,18 @@ function produceResult($result){
 }
 
 
+/** 
+ * Fonction permet de transformer un Obj Metier 
+ * en $arrayName = array('' => , ); 
+ * 
+ */ 
+
+function clearData($objetMetier){
+    $objetMetier = (array)$objetMetier; 
+    // (TODO) caster ? = force le typage ? 
+  
+
+    return $objetMetier;
+}
 
 
