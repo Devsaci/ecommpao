@@ -31,8 +31,6 @@ try {
         produceError("Email ou password incorrecte.");
     }
 
-
-    //code...
 } catch (Exception $th) {
     produceError($th->getMessage());
 }
