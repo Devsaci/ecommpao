@@ -270,9 +270,9 @@ class DataLayer
                 $categories[] = $category;
             }
 
-            var_dump($sql);
-            var_dump($var);
-            exit();
+            // var_dump($sql);
+            // var_dump($var);
+            // exit();
 
             if ($categories) {
                 return $categories;
@@ -295,33 +295,34 @@ class DataLayer
 
     function getProduct()
     {
-        $sql = "SELECT * FROM " . DB_NAME . ".`product`";
+        $sql = "SELECT * FROM ".DB_NAME.".`product`";
         //echo  $sql;exit();
         try {
-            $result = $this->connexion->prepare($sql);
-            $var = $result->execute();
+                $result = $this->connexion->prepare($sql);
+                $var = $result->execute();
+                $products = [];
 
-            $products = [];
-            while ($data = $result->fetch(PDO::FETCH_OBJ)) {
-                $product = new ProductEntity();
-                $product->setIdProduct($data->id);
-                $product->setName($data->name);
-                $product->setDescription($data->description);
-                $product->setPrice($data->price);
-                $product->setStock($data->stock);
-                $product->setImage($data->image);
-                $product->setCategory($data->category);
-                $product->setCreatedAt($data->createdat);
-                $products[] = $product;
+         while($data = $result->fetch(PDO::FETCH_OBJ)){
+               $product = new ProductEntity();
+               $product->setIdProduct($data->id);
+               $product->setName($data->name);
+               $product->setDescription($data->description);
+               $product->setPrice($data->price);
+               $product->setStock($data->stock);
+               $product->setImage($data->image);
+               $product->setCategory($data->category);
+               $product->setCreatedAt($data->createdat);
+
+               $products[] = $product;
             }
 
             // var_dump($sql); 
             // var_dump($var); 
             // exit();
 
-            if ($products) {
+            if($products){
                 return $products;
-            } else {
+            }else{
                 return FALSE;
             }
         } catch (PDOException $th) {

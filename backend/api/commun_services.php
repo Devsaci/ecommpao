@@ -45,7 +45,7 @@ function produceErrorRequest()
 
 function produceResult($result)
 {
-    $result = clearData($result);
+    // $result = clearData($result);
     answer(['status' => 200, 'result' => $result]);
 }
 
@@ -56,20 +56,18 @@ function produceResult($result)
  * 
  */
 
-function clearData($objetMetier)
-{
+function clearData($objetMetier){
     $objetMetier = (array)$objetMetier;
-    // (TODO) caster ? = force le typage ? 
-    $result = [];
+
+    $result=[];
 
     foreach ($objetMetier as $key => $value) {
-        $result[substr($key, 3)] = $value;
+        $result[substr($key,3)]= $value;
     }
     return $result;
 }
 
-function clearDataArray($array_obj_met)
-{
+function clearDataArray($array_obj_met){
     $result = [];
     foreach ($array_obj_met as $key => $value) {
         $result[$key] = clearData($value);
