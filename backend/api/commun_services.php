@@ -60,11 +60,11 @@ function clearData($objetMetier)
 {
     $objetMetier = (array)$objetMetier;
     // (TODO) caster ? = force le typage ? 
-    // $result = [];
+    $result = [];
 
-    // foreach ($objetMetier as $key => $value) {
-    //     $result[substr($key, 3)] = $value;
-    // }
+    foreach ($objetMetier as $key => $value) {
+        $result[substr($key, 3)] = $value;
+    }
     return $objetMetier;
 }
 
