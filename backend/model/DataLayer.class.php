@@ -95,8 +95,8 @@ class DataLayer
             ));
             
 
-            var_dump($sql);
-            var_dump($data);
+            // var_dump($sql);
+            // var_dump($data);
             //exit();
 
             if ($data) {
@@ -119,12 +119,16 @@ class DataLayer
 
     function createCategory(CategoryEntity $category)
     {
-        $sql = "INSERT INTO " . DB_NAME . ".`category`(`category`) VALUES (:name)";
+        $sql = "INSERT INTO microbe_souck.`category`(name) VALUES (:name)";
         try {
             $result = $this->connexion->prepare($sql);
             $data = $result->execute(array(
                 ':name' => $category->getName()
             ));
+
+            // var_dump($sql);
+            // var_dump($data);
+            //exit();
             if ($data) {
                 return TRUE;
             } else {
@@ -189,8 +193,8 @@ class DataLayer
                 ':price' => $orders->getPrice()
             ));
 
-            var_dump($sql);
-            var_dump($data);
+            // var_dump($sql);
+            // var_dump($data);
             //exit();
 
             if ($data) {

@@ -22,7 +22,7 @@ require 'entity/ordersEntity.php';
 
 
 //Instantiation objet DataLayer
-$db = new DataLayer();
+// $db = new DataLayer();
 
 
 
@@ -36,6 +36,13 @@ $db = new DataLayer();
 // echo "<pre>";
 // print_r($var);
 
+
+// $category =new CategoryEntity();
+// $category ->setIdCategory(1);
+// $category ->setName("categorie test1");
+// $var = $db->createCategory($category);
+// echo "<pre>";
+// print_r($category);
 
 
 
