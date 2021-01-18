@@ -9,4 +9,13 @@ if(!isset($_REQUEST['name']) ){
 
 
 
+    $category = new CategoryEntity();
+    $category->setName($_REQUEST['name']);
+    
+
+
+
+ 
+
+
 
