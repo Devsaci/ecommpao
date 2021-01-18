@@ -46,6 +46,18 @@ if(!isset($_REQUEST['name']) ){
     ],
     "time": "18/01/2021 17:42:30"
   } */
+
+
+// http://localhost/ecommpao/backend/api/createCategory.php?name=
+
+/* {
+    "status": 404,
+    "message": "Echec de création de la categorie",
+    "args": {
+      "name": ""
+    },
+    "time": "18/01/2021 17:46:23"
+  } */
     
 
 
