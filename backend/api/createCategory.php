@@ -50,3 +50,17 @@ if(!isset($_REQUEST['name']) || empty($_REQUEST['name'])){
     },
     "time": "18/01/2021 17:46:23"
   } */
+
+
+
+
+// http://localhost/ecommpao/backend/api/createCategory.php?name=API%20Category%20Test
+/* 
+{
+    "status": 200,
+    "result": "Categorie créée avec succès",
+    "args": {
+      "name": "API Category Test"
+    },
+    "time": "18/01/2021 21:13:25"
+  } */
