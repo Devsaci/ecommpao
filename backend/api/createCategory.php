@@ -35,7 +35,17 @@ if(!isset($_REQUEST['name']) ){
     
 
 
+// 20210118174230
+// http://localhost/ecommpao/backend/api/createCategory.php
 
+/* {
+    "status": 400,
+    "message": "Requête mal formulée",
+    "args": [
+      
+    ],
+    "time": "18/01/2021 17:42:30"
+  } */
     
 
 
