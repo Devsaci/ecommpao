@@ -65,7 +65,7 @@ function clearData($objetMetier)
     foreach ($objetMetier as $key => $value) {
         $result[substr($key, 3)] = $value;
     }
-    return $objetMetier;
+    return $result;
 }
 
 function clearDataArray($array_obj_met)
