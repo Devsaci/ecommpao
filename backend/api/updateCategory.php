@@ -10,3 +10,9 @@ if(empty($_REQUEST['id']) || empty($_REQUEST['name'])){
     produceErrorRequest();
     return;
 }
+
+try {
+    //code...
+} catch (Exception $th) {
+    produceError($th->getMessage());
+
