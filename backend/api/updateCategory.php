@@ -11,6 +11,13 @@ if(empty($_REQUEST['id']) || empty($_REQUEST['name'])){
     return;
 }
 
+$category = new CategoryEntity();
+
+$category->setIdCategory($_REQUEST['id']);
+$category->setName($_REQUEST['name']);
+
+
+
 try {
     //code...
 } catch (Exception $th) {
