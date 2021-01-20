@@ -30,3 +30,16 @@ try {
     produceError($th->getMessage());
 
 }
+
+// 20210120173323
+// http://localhost/ecommpao/backend/api/updateCategory.php?id=1&name=Talons%20femmes
+
+// {
+//     "status": 200,
+//     "result": "modification réussie ;",
+//     "args": {
+//       "id": "1",
+//       "name": "Talons femmes"
+//     },
+//     "time": "20/01/2021 17:33:23"
+//   }
