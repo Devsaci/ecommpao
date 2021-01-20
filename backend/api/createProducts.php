@@ -11,14 +11,18 @@ empty($_REQUEST['stock']) || empty($_REQUEST['category']) || empty($_REQUEST['im
     return;
 }
 
+$product = new ProductEntity();
+
+$product->setName($_REQUEST['name']);
+$product->setDescription($_REQUEST['description']);
+$product->setPrice($_REQUEST['price']);
+$product->setStock($_REQUEST['stock']);
+$product->setCategory($_REQUEST['category']);
+$product->setImage($_REQUEST['image']);
+
 try {
-    $product = new ProductEntity();
-    $product->setName($_REQUEST['name']);
-    $product->setDescription($_REQUEST['description']);
-    $product->setPrice($_REQUEST['price']);
-    $product->setStock($_REQUEST['stock']);
-    $product->setCategory($_REQUEST['category']);
-    $product->setImage($_REQUEST['image']);
+  
+    $data = $db->createProduct($product);
     
 } catch (Exception  $th) {
     produceError($th->getMessage());
