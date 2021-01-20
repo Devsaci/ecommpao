@@ -14,7 +14,10 @@ if(empty($_REQUEST['idUser']) || empty($_REQUEST['idProduct'])
 }
 
 try {
-    //code...
-} catch (\Throwable $th) {
-    //throw $th;
+    $order = new OrdersEntity();
+
+
+    
+} catch (Exception $th) {
+    produceError($th->getMessage());
 }
