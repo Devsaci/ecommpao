@@ -44,3 +44,14 @@ try {
 //     ],
 //     "time": "20/01/2021 10:21:29"
 //   }
+
+// http://localhost/ecommpao/backend/api/createOrders.php?idUser=5
+
+// {
+//     "status": 400,
+//     "message": "Requête mal formulée",
+//     "args": {
+//       "idUser": "5"
+//     },
+//     "time": "20/01/2021 10:23:13"
+//   }
