@@ -55,3 +55,18 @@ try {
 //     },
 //     "time": "20/01/2021 10:23:13"
 //   }
+
+// 20210120114742
+// http://localhost/ecommpao/backend/api/createOrders.php?idUser=5&idProduct=11&quantity=5&price=1000
+
+// {
+//     "status": 200,
+//     "result": "Commande créée avec succès",
+//     "args": {
+//       "idUser": "5",
+//       "idProduct": "11",
+//       "quantity": "5",
+//       "price": "1000"
+//     },
+//     "time": "20/01/2021 11:47:41"
+//   }
