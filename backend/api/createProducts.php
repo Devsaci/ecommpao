@@ -29,7 +29,19 @@ try {
    }else {
        produceError("Problème rencontré lors de l'enregistrement");
    }
-   
+
 } catch (Exception  $th) {
     produceError($th->getMessage());
 }
+
+// 20210120120701
+// http://localhost/ecommpao/backend/api/createProducts.php
+
+{
+    "status": 400,
+    "message": "Requête mal formulée",
+    "args": [
+      
+    ],
+    "time": "20/01/2021 12:07:01"
+  }
