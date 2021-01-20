@@ -6,3 +6,9 @@ if(!isset($_REQUEST['idUser']) || !isset($_REQUEST['idProduct'])
     produceErrorRequest();
     return;
 }
+
+if(empty($_REQUEST['idUser']) || empty($_REQUEST['idProduct']) 
+|| empty($_REQUEST['quantity']) || empty($_REQUEST['price'])){
+    produceErrorRequest();
+    return;
+}
