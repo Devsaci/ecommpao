@@ -32,3 +32,15 @@ try {
 } catch (Exception $th) {
     produceError($th->getMessage());
 }
+
+// 20210120102129
+// http://localhost/ecommpao/backend/api/createOrders.php
+
+// {
+//     "status": 400,
+//     "message": "Requête mal formulée",
+//     "args": [
+      
+//     ],
+//     "time": "20/01/2021 10:21:29"
+//   }
