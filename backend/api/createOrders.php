@@ -15,9 +15,12 @@ if(empty($_REQUEST['idUser']) || empty($_REQUEST['idProduct'])
 
 try {
     $order = new OrdersEntity();
+    $order->setIdUser($_REQUEST['idUser']);
+    $order->setIdProduct($_REQUEST['idProduct']);
+    $order->setQuantity($_REQUEST['quantity']);
+    $order->setPrice($_REQUEST['price']);
 
 
-    
 } catch (Exception $th) {
     produceError($th->getMessage());
 }
