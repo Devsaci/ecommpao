@@ -28,7 +28,19 @@ try {
     }else{
         produceError("Problème rencontré lors de la création du compte");
     }
-    
+
 } catch (Exception $th) {
     produceError($th->getMessage());
 }
+
+// 20210120122415
+// http://localhost/ecommpao/backend/api/createUsers.php
+
+// {
+//     "status": 400,
+//     "message": "Requête mal formulée",
+//     "args": [
+      
+//     ],
+//     "time": "20/01/2021 12:24:14"
+//   }
