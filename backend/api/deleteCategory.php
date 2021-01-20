@@ -20,3 +20,14 @@ try {
 } catch (Exception $th) {
     produceError($th->getMessage());
 }
+// 20210120192240
+// http://localhost/ecommpao/backend/api/deleteCategory.php?id=6
+
+// {
+//     "status": 200,
+//     "result": "Suppression réussie ;",
+//     "args": {
+//       "id": "6"
+//     },
+//     "time": "20/01/2021 19:22:40"
+//   }
