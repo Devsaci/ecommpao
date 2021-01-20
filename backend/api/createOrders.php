@@ -12,3 +12,9 @@ if(empty($_REQUEST['idUser']) || empty($_REQUEST['idProduct'])
     produceErrorRequest();
     return;
 }
+
+try {
+    //code...
+} catch (\Throwable $th) {
+    //throw $th;
+}
