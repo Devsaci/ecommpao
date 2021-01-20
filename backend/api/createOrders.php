@@ -20,6 +20,8 @@ try {
     $order->setQuantity($_REQUEST['quantity']);
     $order->setPrice($_REQUEST['price']);
 
+    $result = $db->createOrders($order);
+
 
 } catch (Exception $th) {
     produceError($th->getMessage());
