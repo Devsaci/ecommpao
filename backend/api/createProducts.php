@@ -24,6 +24,12 @@ try {
   
     $data = $db->createProduct($product);
     
+    if($data){
+       produceResult("Produit enrégistré avec succès !");
+   }else {
+       produceError("Problème rencontré lors de l'enregistrement");
+   }
+   
 } catch (Exception  $th) {
     produceError($th->getMessage());
 }
