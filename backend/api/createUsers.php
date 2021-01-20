@@ -12,3 +12,11 @@ if(empty($_REQUEST["sexe"]) || empty($_REQUEST["pseudo"]) || empty($_REQUEST["em
     return;
 }
 
+$user = new UserEntity();
+$user->setSexe($_REQUEST["sexe"]);
+$user->setPseudo(($_REQUEST["pseudo"]));
+$user->setFirstname($_REQUEST["firstname"]);
+$user->setLastname($_REQUEST["lastname"]);
+$user->setEmail($_REQUEST["email"]);
+$user->setPassword($_REQUEST["password"]);
+$user->setDateBirth($_REQUEST["dateBirth"]);
