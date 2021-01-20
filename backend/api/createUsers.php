@@ -20,3 +20,15 @@ $user->setLastname($_REQUEST["lastname"]);
 $user->setEmail($_REQUEST["email"]);
 $user->setPassword($_REQUEST["password"]);
 $user->setDateBirth($_REQUEST["dateBirth"]);
+try {
+    $data = $db->createUser($user);
+
+    if($data){
+        produceResult("Compte utilisateur créé avec succès");
+    }else{
+        produceError("Problème rencontré lors de la création du compte");
+    }
+    
+} catch (Exception $th) {
+    produceError($th->getMessage());
+}
