@@ -5,3 +5,8 @@ if(!isset($_REQUEST['name']) || !isset($_REQUEST['description']) || !isset($_REQ
     produceErrorRequest();
     return;
 }
+if(empty($_REQUEST['name']) || empty($_REQUEST['description']) || empty($_REQUEST['price']) ||
+empty($_REQUEST['stock']) || empty($_REQUEST['category']) || empty($_REQUEST['image'])){
+    produceErrorRequest();
+    return;
+}
