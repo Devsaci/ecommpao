@@ -10,3 +10,9 @@ empty($_REQUEST['stock']) || empty($_REQUEST['category']) || empty($_REQUEST['im
     produceErrorRequest();
     return;
 }
+
+try {
+    //code...
+} catch (Exception  $th) {
+    produceError($th->getMessage());
+}
