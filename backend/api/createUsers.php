@@ -44,3 +44,18 @@ try {
 //     ],
 //     "time": "20/01/2021 12:24:14"
 //   }
+// http://localhost/ecommpao/backend/api/createUsers.php?email=email@email.fr&password=1968&firstname=firstname&lastname=lastname&sexe=1&pseudo=pseudo&dateBirth=12/12/2020
+
+// {
+//     "status": 200,
+//     "result": "Compte utilisateur créé avec succès",
+//     "args": {
+//       "email": "email@email.fr",
+//       "firstname": "firstname",
+//       "lastname": "lastname",
+//       "sexe": "1",
+//       "pseudo": "pseudo",
+//       "dateBirth": "12/12/2020"
+//     },
+//     "time": "20/01/2021 15:38:02"
+//   }
