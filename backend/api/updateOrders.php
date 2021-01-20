@@ -36,15 +36,31 @@ try {
 // 20210120185127
 // http://localhost/ecommpao/backend/api/updateOrders.php?idOrder=76&idUser=11&idProduct=56&price=1000&quantity=1000
 
-{
-    "status": 200,
-    "result": "Mise à jour réussie !",
-    "args": {
-      "idOrder": "76",
-      "idUser": "11",
-      "idProduct": "56",
-      "price": "1000",
-      "quantity": "1000"
-    },
-    "time": "20/01/2021 18:51:26"
-  }
+// {
+//     "status": 200,
+//     "result": "Mise à jour réussie !",
+//     "args": {
+//       "idOrder": "76",
+//       "idUser": "11",
+//       "idProduct": "56",
+//       "price": "1000",
+//       "quantity": "1000"
+//     },
+//     "time": "20/01/2021 18:51:26"
+//   }
+
+// 20210120185554
+// http://localhost/ecommpao/backend/api/updateOrders.php?idOrder=75&idUser=11&idProduct=56&price=100000&quantity=100000
+
+// {
+//     "status": 200,
+//     "result": "Mise à jour réussie !",
+//     "args": {
+//       "idOrder": "75",
+//       "idUser": "11",
+//       "idProduct": "56",
+//       "price": "100000",
+//       "quantity": "100000"
+//     },
+//     "time": "20/01/2021 18:55:54"
+//   }
