@@ -11,15 +11,22 @@ if(empty($_REQUEST['id']) || empty($_REQUEST['name'])){
     return;
 }
 
+
 $category = new CategoryEntity();
-
 $category->setIdCategory($_REQUEST['id']);
-$category->setName($_REQUEST['name']);
-
-
+$category->setName($_REQUEST['name']); 
 
 try {
-    //code...
+
+    $data = $db->updateCategory($category);
+
+    if($data){
+        produceResult('modification réussie ;');
+    }else {
+        produceError("Echec de la mise à jour. Merci de réessayer !");
+    }
+
 } catch (Exception $th) {
     produceError($th->getMessage());
 
+}
