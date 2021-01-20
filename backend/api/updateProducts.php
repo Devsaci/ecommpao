@@ -32,3 +32,20 @@ try {
 } catch (Exception $th) {
     produceError($th->getMessage());
 }
+// 20210120190154
+// http://localhost/ecommpao/backend/api/updateProducts.php?idProduct=39&name=nameProduct&description=descriptionproduct&price=999&stock=999&category=1&image=imageproduct.png
+
+// {
+//     "status": 200,
+//     "result": "modification réussie ;",
+//     "args": {
+//       "idProduct": "40",
+//       "name": "nameProduct",
+//       "description": "descriptionproduct",
+//       "price": "999",
+//       "stock": "999",
+//       "category": "1",
+//       "image": "imageproduct.png"
+//     },
+//     "time": "20/01/2021 19:10:47"
+//   }
