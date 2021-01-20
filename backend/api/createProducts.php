@@ -12,7 +12,9 @@ empty($_REQUEST['stock']) || empty($_REQUEST['category']) || empty($_REQUEST['im
 }
 
 try {
-    //code...
+    $product = new ProductEntity();
+   
+
 } catch (Exception  $th) {
     produceError($th->getMessage());
 }
