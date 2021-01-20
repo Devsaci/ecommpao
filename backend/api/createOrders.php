@@ -22,6 +22,12 @@ try {
 
     $result = $db->createOrders($order);
 
+    if($result){
+       
+        produceResult("Commande créée avec succès");
+    }else {
+        produceError("Erreur lors de la création de la commande. Merci de réessayer !");
+    }
 
 } catch (Exception $th) {
     produceError($th->getMessage());
