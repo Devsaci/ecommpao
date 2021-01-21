@@ -103,10 +103,35 @@ controlAccess();
 //     "time": "21/01/2021 13:16:32"
 //   }
 
-	function get() { 
- 		return $this->; 
-	} 
+// 20210121132019
+// http://localhost/ecommpao/backend/api/getCategories.php?API_KEY=adsffsdfds6b-6727-46f4-8bee-2c6ce6293e41
 
-	function set($) {  
-		$this-> = $; 
-	} 
+// {
+//     "status": 200,
+//     "result": [
+//       {
+//         "idCategory": 1,
+//         "name": "Talons femmes"
+//       },
+//       {
+//         "idCategory": 2,
+//         "name": "Robes femmes"
+//       },
+//       {
+//         "idCategory": 3,
+//         "name": "Pantalons femmes"
+//       },
+//       {
+//         "idCategory": 4,
+//         "name": "Chemises femmes"
+//       },
+//       {
+//         "idCategory": 5,
+//         "name": "Bon plan femmes"
+//       }
+//     ],
+//     "args": {
+//       "API_KEY": "adsffsdfds6b-6727-46f4-8bee-2c6ce6293e41"
+//     },
+//     "time": "21/01/2021 13:20:19"
+//   }
