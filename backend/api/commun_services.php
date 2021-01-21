@@ -89,3 +89,24 @@ function controlAccess()
         exit();
     }
 }
+
+controlAccess();
+// 20210121131632
+// http://localhost/ecommpao/backend/api/getCategories.php
+
+// {
+//     "status": 401,
+//     "message": "Authentification requis !",
+//     "args": [
+      
+//     ],
+//     "time": "21/01/2021 13:16:32"
+//   }
+
+	function get() { 
+ 		return $this->; 
+	} 
+
+	function set($) {  
+		$this-> = $; 
+	} 
