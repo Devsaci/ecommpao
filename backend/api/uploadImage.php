@@ -8,7 +8,7 @@ if(isset($_FILES) && is_array($_FILES)){
         $save = move_uploaded_file($_FILES['image']["tmp_name"],$dirImage);
 
         if($save){
-            produceResult($_FILLES);
+            produceResult($_FILES);
         }else{
             produceError("Erreur de stockage de l'image");
         }

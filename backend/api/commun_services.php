@@ -90,7 +90,7 @@ function controlAccess()
     }
 }
 
-controlAccess();
+// controlAccess();
 // 20210121131632
 // http://localhost/ecommpao/backend/api/getCategories.php
 
