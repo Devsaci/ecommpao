@@ -21,3 +21,24 @@ produceError("Fichier incorect");
 }else{
     produceErrorRequest();
 }
+
+// 20210121172723
+// http://localhost/ecommpao/backend/api/uploadImage.php
+
+// {
+//     "status": 200,
+//     "result": {
+//       "image": {
+//         "name": "2011-11-06 10.15.26.jpg",
+//         "type": "image/jpeg",
+//         "tmp_name": "C:\\xampp\\tmp\\phpC504.tmp",
+//         "error": 0,
+//         "size": 1219090
+//       }
+//     },
+//     "args": [
+      
+//     ],
+//     "time": "21/01/2021 17:27:23"
+//   }
+
