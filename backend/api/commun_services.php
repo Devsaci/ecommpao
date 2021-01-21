@@ -7,6 +7,7 @@ define("SP", DIRECTORY_SEPARATOR);
 define("CONFIG", ROOT . SP . "config");
 define("MODEL", ROOT . SP . "model");
 define("ENTITY", ROOT . SP . "entity");
+define("API_KEY", 'adsffsdfds6b-6727-46f4-8bee-2c6ce6293e41');
 
 require CONFIG . SP . "config.php";
 require MODEL . SP . "DataLayer.class.php";
@@ -74,3 +75,5 @@ function clearDataArray($array_obj_met){
     }
     return $result;
 }
+
+
