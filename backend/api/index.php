@@ -14,7 +14,19 @@ if(sizeof($url_clean) < 4){
         $temp = explode("?",$action);
         $action = $temp[0];
     }
-}
+    if($_SERVER["REQUEST_METHOD"] === "GET"){
+        echo "recuperation";
+    }elseif($_SERVER["REQUEST_METHOD"] === "POST"){
+        echo "creat";
+    }elseif($_SERVER["REQUEST_METHOD"] === "DELETE"){
+        echo "delete";
+    }elseif($_SERVER["REQUEST_METHOD"] === "PUT"){
+        echo "update";
+    }
 
-var_dump($action);
+
+}
+// Installation Application Postman
+
+// var_dump($action);
 // echo"test url ok";
