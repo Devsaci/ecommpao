@@ -1,2 +1,3 @@
 <?php
-echo "page index api";
+var_dump($_SERVER);
+
