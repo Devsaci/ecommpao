@@ -66,6 +66,12 @@ define("BASE_URL", dirname($_SERVER['SCRIPT_NAME']));
 </head>
 <body> 
 <!-- <h1><strong>DOCUMENTATION </strong></h1> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <a class="navbar-brand" href="#">JSTORE API</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
 <div class="container">
 <h1 class="text-center display-4">Documentation API microbe_souck</h1>
 
