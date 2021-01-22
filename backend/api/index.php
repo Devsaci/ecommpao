@@ -1,5 +1,6 @@
 <?php
-var_dump($_SERVER["REQUEST_URI"]);
-$url = explode("/", $_SERVER["REQUEST_URI"]);
-var_dump($url);
+// var_dump($_SERVER["REQUEST_URI"]);
+$url = trim($_SERVER["REQUEST_URI"],'/');
+$url_clean = explode("/", $url);
+var_dump($url_clean);
 
