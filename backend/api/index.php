@@ -14,14 +14,15 @@ if(sizeof($url_clean) < 4){
         $temp = explode("?",$action);
         $action = $temp[0];
     }
+    
     if($_SERVER["REQUEST_METHOD"] === "GET"){
-        echo "recuperation";
+        require './get'.ucwords($action).".php";
     }elseif($_SERVER["REQUEST_METHOD"] === "POST"){
-        echo "creat";
+        require './creat'.ucwords($action).".php";
     }elseif($_SERVER["REQUEST_METHOD"] === "DELETE"){
-        echo "delete";
+    require './delete'.ucwords($action).".php";
     }elseif($_SERVER["REQUEST_METHOD"] === "PUT"){
-        echo "update";
+    require './update'.ucwords($action).".php";
     }
 
 
@@ -30,3 +31,4 @@ if(sizeof($url_clean) < 4){
 
 // var_dump($action);
 // echo"test url ok";
+
