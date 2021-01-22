@@ -10,5 +10,11 @@ if(sizeof($url_clean) < 4){
 }else{
     $action = $url_clean[sizeof($url_clean)-1];
     $pos = strpos($action,'?');
+    if($pos){
+        $temp = explode("?",$action);
+        $action = $temp[0];
+    }
 }
-echo"test url ok";
+
+var_dump($action);
+// echo"test url ok";
