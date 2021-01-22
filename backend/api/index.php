@@ -18,7 +18,7 @@ if(sizeof($url_clean) < 4){
     if($_SERVER["REQUEST_METHOD"] === "GET"){
         require './get'.ucwords($action).".php";
     }elseif($_SERVER["REQUEST_METHOD"] === "POST"){
-        require './creat'.ucwords($action).".php";
+        require './create'.ucwords($action).".php";
     }elseif($_SERVER["REQUEST_METHOD"] === "DELETE"){
     require './delete'.ucwords($action).".php";
     }elseif($_SERVER["REQUEST_METHOD"] === "PUT"){
