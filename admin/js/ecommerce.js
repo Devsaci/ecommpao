@@ -8,24 +8,28 @@ class Ecommerce {
 
     initRouter(){
         this.actions.forEach((action) => {
-            
-        }
 
-        
+
+
+        })
+
     }
 
-
-
-
-
-
-
-
-
-
-
-
 }
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 export { Ecommerce }
