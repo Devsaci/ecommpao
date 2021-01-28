@@ -8,7 +8,8 @@ class Ecommerce {
 
     initRouter(){
         this.actions.forEach((action) => {
-
+            document.getElementById(action).addEventListener('click', () => {
+                fetch('templates/' + action + '.html')
 
 
         })
@@ -17,19 +18,5 @@ class Ecommerce {
 
 }
    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export { Ecommerce }
