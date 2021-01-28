@@ -10,7 +10,13 @@ class Ecommerce {
         this.actions.forEach((action) => {
             document.getElementById(action).addEventListener('click', () => {
                 fetch('templates/' + action + '.html')
-
+                .then((response) => {
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        console.log('Erreur de chargement du tempate');
+                    }
+                }).then((data) => {
 
         })
 
