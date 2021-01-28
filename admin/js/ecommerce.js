@@ -21,6 +21,8 @@ class Ecommerce {
                     document.getElementsByClassName('container-fluid')[0].innerHTML = data;
 
         })
+    })
+})
 
     }
 
