@@ -3,7 +3,8 @@ class Ecommerce {
     constructor() {
         this.api_key = "API_KEY=adsffsdfds6b-6727-46f4-8bee-2c6ce6293e41";
         this.api = "http://localhost/ecommerce/backend/api/";
-        this.actions = ['orders', 'users', 'category', 'products'];   
+        this.actions = ['orders', 'users', 'category', 'products'];  
+        this.initRouter();
     }
 
     initRouter(){
@@ -17,6 +18,7 @@ class Ecommerce {
                         console.log('Erreur de chargement du tempate');
                     }
                 }).then((data) => {
+                    document.getElementsByClassName('container-fluid')[0].innerHTML = data;
 
         })
 
