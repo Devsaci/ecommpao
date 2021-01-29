@@ -24,6 +24,43 @@ class Ecommerce {
             })
         })
     }
+/*
+Methode de recuperation des données
+*/  
+initDataApp(){
+    this.actions.forEach((action) => {
+        const url = this.api + action + "?" + this.api_key;
+        fetch(url)
+        .then((response) =>{
+            if (response.ok)
+            {
+                return response.json()
+            } else {
+                console.log("Erreur de chargement des données");
+            }
+        }).then((response) =>{
+            if (response.status == 200){
+
+                localStorage.setItem(action, JSON.stringify(response.result));
+            }
+
+
+        }
+
+
+
+
+
+    })  
+        }
+}
+  
+
+
+
+
+
+}
 
 
 }
