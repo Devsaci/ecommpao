@@ -1,20 +1,21 @@
 <?php
 require 'commun_services.php';
 
-if(!isset($_REQUEST["id"]) || !is_numeric($_REQUEST["id"])){
+if (!isset($_REQUEST["id"]) || !is_numeric($_REQUEST["id"])) {
     produceErrorRequest();
     return;
 }
 
-$category = new CategoryEntity();
-$category->setIdCategory($_REQUEST["id"]);
+
 
 try {
+    $category = new CategoryEntity();
+    $category->setIdCategory($_REQUEST["id"]);
     $data = $db->deleteCategory($category);
 
-    if($data){
+    if ($data) {
         produceResult('Suppression réussie ;');
-    }else {
+    } else {
         produceError("Echec de la suppression. Merci de réessayer !");
     }
 } catch (Exception $th) {

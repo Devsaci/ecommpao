@@ -8,11 +8,11 @@ require 'commun_services.php';
 // produceResult(['email' => 'contact@mail.com']);
 
 /* Test function clearData($objetMetier) */
-$user = new UserEntity;
-$user->setEmail("contact@mail.com");
-$user->setPassword("1234");
-// var_dump(clearData($user));
-produceResult($user);
+// $user = new UserEntity;
+// $user->setEmail("contact@mail.com");
+// $user->setPassword("1234");
+// // var_dump(clearData($user));
+// produceResult($user);
 
 
 
