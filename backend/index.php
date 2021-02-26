@@ -139,21 +139,6 @@ $db = new DataLayer();
 
 /* TEST create  */
 
-
-/* TEST createUser  */
-// $user1 = new UserEntity();
-// $user1->setSexe(1);
-// $user1->setPseudo("SACIdate");
-// $user1->setEmail("testdate@email.com");
-// $user1->setPassword("1234");
-// $user1->setFirstname("toto");
-// $user1->setLastname("toto");;
-// $var = $db->createUser($user1);
-
-// echo "<pre>";
-// print_r($user1);
-
-
 /* TEST createCategory  */
 // $category =new CategoryEntity();
 // // $category ->setIdCategory(1);
@@ -187,7 +172,18 @@ $db = new DataLayer();
 // echo "<pre>";
 // print_r($product);
 
+/* TEST createUser  */
+// $user1 = new UserEntity();
+// $user1->setSexe(1);
+// $user1->setPseudo("SACIdate");
+// $user1->setEmail("testdate@email.com");
+// $user1->setPassword("1234");
+// $user1->setFirstname("toto");
+// $user1->setLastname("toto");;
+// $var = $db->createUser($user1);
 
+// echo "<pre>";
+// print_r($user1);
 
 
 
@@ -283,9 +279,9 @@ $db = new DataLayer();
 // $user->setEmail("zakaria51@mail.com");
 // $user->setPassword("1234");
 
-$var = $db->updateUsers($user);
-echo "<pre>";
-print_r($user);
+// $var = $db->updateUsers($user);
+// echo "<pre>";
+// print_r($user);
 
 /* TEST Delete */
 

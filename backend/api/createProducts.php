@@ -36,31 +36,19 @@ try {
     produceError($th->getMessage());
 }
 
-// 20210120120701
-// http://localhost/ecommpao/backend/api/createProducts.php
-
-// {
-//     "status": 400,
-//     "message": "Requête mal formulée",
-//     "args": [
-      
-//     ],
-//     "time": "20/01/2021 12:07:01"
-//   }
-
-// 20210120121217
-// http://localhost/ecommpao/backend/api/createProducts.php?name=Produit%202021&description=descrip2021&price=1000&category=1&image=bgtest.png&stock=1000
+// 20210226130121
+// http://localhost/ecommpao/backend/api/createProducts.php?name=Produit26/02fordelete&description=descrip26/02&price=2602&category=1&image=bg26/02.png&stock=2602
 
 // {
 //     "status": 200,
 //     "result": "Produit enrégistré avec succès !",
 //     "args": {
-//       "name": "Produit 2021",
-//       "description": "descrip2021",
-//       "price": "1000",
+//       "name": "Produit26/02fordelete",
+//       "description": "descrip26/02",
+//       "price": "2602",
 //       "category": "1",
-//       "image": "bgtest.png",
-//       "stock": "1000"
+//       "image": "bg26/02.png",
+//       "stock": "2602"
 //     },
-//     "time": "20/01/2021 12:12:17"
+//     "time": "26/02/2021 13:01:21"
 //   }

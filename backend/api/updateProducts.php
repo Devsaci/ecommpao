@@ -47,20 +47,20 @@ try {
 } catch (Exception $th) {
     produceError($th->getMessage());
 }
-// 20210225123643
-// http://localhost/ecommpao/backend/api/updateProducts.php?idProduct=44&name=26/02t&description=26/02&price=1&stock=1&category=1&image=26/02.png
+// 20210226131424
+// http://localhost/ecommpao/backend/api/updateProducts.php?idProduct=38&name=Produit25/02fordelete&description=descrip26/02&price=2602&category=1&image=bg26/02.png&stock=2602
 
 // {
 //     "status": 200,
 //     "result": "modification réussie ;",
 //     "args": {
-//       "idProduct": "44",
-//       "name": "26/02t",
-//       "description": "26/02",
-//       "price": "1",
-//       "stock": "1",
+//       "idProduct": "38",
+//       "name": "Produit25/02fordelete",
+//       "description": "descrip26/02",
+//       "price": "2602",
 //       "category": "1",
-//       "image": "26/02.png"
+//       "image": "bg26/02.png",
+//       "stock": "2602"
 //     },
-//     "time": "25/02/2021 12:36:43"
+//     "time": "26/02/2021 13:14:24"
 //   }
