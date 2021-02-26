@@ -48,7 +48,13 @@ try {
     produceError($th->getMessage());
 }
 // 20210226131424
-// http://localhost/ecommpao/backend/api/updateProducts.php?idProduct=38&name=Produit25/02fordelete&description=descrip26/02&price=2602&category=1&image=bg26/02.png&stock=2602
+// http://localhost/ecommpao/backend/api/updateProducts.php?
+// idProduct=38&
+// name=Produit25/02fordelete&
+// description=descrip26/02&
+// price=2602&category=1&
+// image=bg26/02.png&
+// stock=2602
 
 // {
 //     "status": 200,

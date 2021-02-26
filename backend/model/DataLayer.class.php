@@ -189,7 +189,7 @@ class DataLayer
                 ':email' => $user->getEmail(),
                 ':password' => sha1($user->getPassword()),
                 ':firstname' => $user->getFirstname(),
-                ':lastname' => $user->getLastname(),
+                ':lastname' => $user->getLastname()
             ));
 
 
@@ -453,8 +453,14 @@ class DataLayer
      */
     function updateProduct(ProductEntity $product)
     {
-        $sql = "UPDATE " . DB_NAME . ".`product` SET `name`=:name,`description`=:description,`price`=:price,
-        `stock`=:stock,`category`=:category,`image`=:image WHERE id=:id";
+        $sql = "UPDATE " . DB_NAME . ".`product` SET 
+        `name`=:name,
+        `description`=:description,
+        `price`=:price,
+        `stock`=:stock,
+        `category`=:category,
+        `image`=:image 
+        WHERE id=:id";
         try {
             $result = $this->connexion->prepare($sql);
             $data = $result->fetch(PDO::FETCH_OBJ);
@@ -495,17 +501,17 @@ class DataLayer
         // $sql = "UPDATE microbe_souck.`customers` SET ";
         $sql = "UPDATE ". DB_NAME .".`customers` SET 
         `sexe`=:sexe,
-        `Pseudo`=:Pseudo,
-        `firstname`=:firstname,
-        `lastname`=:lastname,
-        `description`=:description,
-        `dateBirth`=:dateBirth,
-        `adresse_facturation`=:adresse_facturation,
-        `adresse_livraison`=:adresse_livraison,
+        `pseudo`=:pseudo,
         `email`=:email,
-        `password`=:password
+        `password`=:password,
+        `firstname`=:firstname,
+        `lastname`=:lastname
          WHERE id=:id";
-
+        
+        //  `dateBirth`=:dateBirth
+        // `description`=:description,
+        // `adresse_facturation`=:adresse_facturation,
+        // `adresse_livraison`=:adresse_livraison,
         try {
             // $sql .= " Pseudo = '" . $user->getPseudo() . "',";
             // $sql .= " email = '" . $user->getEmail() . "',";
@@ -521,15 +527,16 @@ class DataLayer
             $var = $result->execute(array(
                 ':id' => $user->getIdUser(),
                 ':sexe' => $user->getSexe(),
-                ':Pseudo' => $user->getPseudo(),
-                ':firstname' => $user->getFirstname(),
-                ':lastname' => $user->getLastname(),
-                ':description' => $user->getDescription(),
-                ':dateBirth' => $user->getDateBirth(),
-                ':adresse_facturation' => $user->getAdresseFacturation(),
-                ':adresse_livraison' => $user->getAdresseLivraison(),
+                ':pseudo' => $user->getPseudo(),
                 ':email' => $user->getEmail(),
                 ':password' => $user->getPassword(),
+                ':firstname' => $user->getFirstname(),
+                ':lastname' => $user->getLastname(),
+               
+                // ':dateBirth' => $user->getDateBirth()
+                // ':description' => $user->getDescription(),
+                // ':adresse_facturation' => $user->getAdresseFacturation(),
+                // ':adresse_livraison' => $user->getAdresseLivraison()
             ));
 
             // var_dump($sql); 
