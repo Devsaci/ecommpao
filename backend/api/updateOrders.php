@@ -37,19 +37,18 @@ try {
     produceError($th->getMessage());
 }
 
-
-// 20210225122926
-// http://localhost/ecommpao/backend/api/updateOrders.php?idOrder=25&idUser=25&idProduct=63&price=2602&quantity=2602
+// 20210226124111
+// http://localhost/ecommpao/backend/api/updateOrders.php?idOrder=14&idUser=55&idProduct=37&quantity=2602&price=2502
 
 // {
 //     "status": 200,
 //     "result": "Mise à jour réussie !",
 //     "args": {
-//       "idOrder": "25",
-//       "idUser": "25",
-//       "idProduct": "63",
-//       "price": "2602",
-//       "quantity": "2602"
+//       "idOrder": "14",
+//       "idUser": "55",
+//       "idProduct": "37",
+//       "quantity": "2602",
+//       "price": "2502"
 //     },
-//     "time": "25/02/2021 12:29:26"
+//     "time": "26/02/2021 12:41:10"
 //   }

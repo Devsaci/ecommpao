@@ -20,3 +20,12 @@ try {
 } catch (Exception $th) {
     produceError($th->getMessage());
 }
+
+// {
+//     "status": 200,
+//     "result": "Suppression réussie ;",
+//     "args": {
+//     "id": "15"
+//     },
+//     "time": "26/02/2021 12:47:34"
+//     }

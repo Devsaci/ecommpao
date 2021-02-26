@@ -35,41 +35,17 @@ try {
 } catch (Exception $th) {
     produceError($th->getMessage());
 }
-
-// 20210120102129
-// http://localhost/ecommpao/backend/api/createOrders.php
-
-// {
-//     "status": 400,
-//     "message": "Requête mal formulée",
-//     "args": [
-      
-//     ],
-//     "time": "20/01/2021 10:21:29"
-//   }
-
-// http://localhost/ecommpao/backend/api/createOrders.php?idUser=5
-
-// {
-//     "status": 400,
-//     "message": "Requête mal formulée",
-//     "args": {
-//       "idUser": "5"
-//     },
-//     "time": "20/01/2021 10:23:13"
-//   }
-
-// 20210120114742
-// http://localhost/ecommpao/backend/api/createOrders.php?idUser=5&idProduct=11&quantity=5&price=1000
+// 20210226123642
+// http://localhost/ecommpao/backend/api/createOrders.php?idUser=55&idProduct=37&quantity=2602&price=2602
 
 // {
 //     "status": 200,
 //     "result": "Commande créée avec succès",
 //     "args": {
-//       "idUser": "5",
-//       "idProduct": "11",
-//       "quantity": "5",
-//       "price": "1000"
+//       "idUser": "55",
+//       "idProduct": "37",
+//       "quantity": "2602",
+//       "price": "2602"
 //     },
-//     "time": "20/01/2021 11:47:41"
+//     "time": "26/02/2021 12:36:42"
 //   }
