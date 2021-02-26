@@ -216,8 +216,8 @@ $db = new DataLayer();
 // print_r($orders);
 
 
-/* TEST update */
-
+                            /* TEST update */
+/* TEST update CategoryEntity*/
 // $category =new CategoryEntity();
 // $category ->setIdCategory(1);
 // $category ->setName("Talons femmes");
@@ -227,8 +227,8 @@ $db = new DataLayer();
 // print_r($category);
 
 
+/* TEST update  OrdersEntity*/
 // $order = new OrdersEntity;
-
 // $order->setIdOrder(19);
 // $order->setIdUser(11);
 // $order->setIdProduct(11);
@@ -240,6 +240,7 @@ $db = new DataLayer();
 // print_r($order);
 
 
+/* TEST update ProductEntity*/
 // $product = new ProductEntity();
 // $product->setIdproduct(41);
 // $product->setName('Productsacidate1fetch');
@@ -255,6 +256,7 @@ $db = new DataLayer();
 // print_r($product);
 
 
+/* TEST update UserEntity */
 $user =new UserEntity();
 $user->setIdUser(64);
 $user->setSexe(0);
