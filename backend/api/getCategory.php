@@ -12,40 +12,44 @@ try {
     produceError("Echec de Récupération des catégories");
 }
 
+// 20210226103137
+// http://localhost/ecommpao/backend/api/getCategory.php
 
-
-
-/* 
-http://localhost/ecommpao/backend/api/getCategories.php
-=>
-{
-  "status": 200,
-  "result": [
-    {
-      "idCategory": 1,
-      "name": "Talons femmes"
-    },
-    {
-      "idCategory": 2,
-      "name": "Robes femmes"
-    },
-    {
-      "idCategory": 3,
-      "name": "Pantalons femmes"
-    },
-    {
-      "idCategory": 4,
-      "name": "Chemises femmes"
-    },
-    {
-      "idCategory": 5,
-      "name": "Bon plan femmes"
-    }
-  ],
-  "args": [
+// {
+//   "status": 200,
+//   "result": [
+//     {
+//       "idCategory": 1,
+//       "name": "categorie test0"
+//     },
+//     {
+//       "idCategory": 2,
+//       "name": "Robes femmes"
+//     },
+//     {
+//       "idCategory": 3,
+//       "name": "Pantalons femmes"
+//     },
+//     {
+//       "idCategory": 4,
+//       "name": "Chemises femmes"
+//     },
+//     {
+//       "idCategory": 5,
+//       "name": "Bon plan femmes"
+//     },
+//     {
+//       "idCategory": 6,
+//       "name": "categorie test1"
+//     },
+//     {
+//       "idCategory": 7,
+//       "name": "APICategorie27/02"
+//     }
+//   ],
+//   "args": [
     
-  ],
-  "time": "18/01/2021 16:53:38"
-} */
-?>
+//   ],
+//   "time": "26/02/2021 10:31:36"
+// }
 

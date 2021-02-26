@@ -257,18 +257,18 @@ $db = new DataLayer();
 
 
 /* TEST update UserEntity */
-$user =new UserEntity();
-$user->setIdUser(64);
-$user->setSexe(0);
-$user->setPseudo("SACI25/02");
-$user->setFirstname("SACI");
-$user->setLastname("Zakaria");
-$user->setDescription("description25/02");
-$user->setdateBirth("16/09/1968");
-$user->setAdresseFacturation("AdresseFacturation");
-$user->setAdresseLivraison("AdresseLivraison");
-$user->setEmail("zakaria2502@mail.com");
-$user->setPassword("1234");
+// $user =new UserEntity();
+// $user->setIdUser(51);
+// $user->setSexe(0);
+// $user->setPseudo("SACI26/02");
+// $user->setFirstname("SACI");
+// $user->setLastname("Zakaria");
+// $user->setDescription("description26/02");
+// $user->setdateBirth("16/09/1968");
+// $user->setAdresseFacturation("AdresseFacturation");
+// $user->setAdresseLivraison("AdresseLivraison");
+// $user->setEmail("zakaria2602@mail.com");
+// $user->setPassword("1234");
 ///////////////////////////////////////////////////////
 // $user->setIdUser(64);
 // $user->setSexe(1);

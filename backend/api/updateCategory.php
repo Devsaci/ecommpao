@@ -30,15 +30,16 @@ try {
     produceError($th->getMessage());
 }
 
-// 20210120173323
-// http://localhost/ecommpao/backend/api/updateCategory.php?id=1&name=Talons%20femmes
+// 20210226103000
+// http://localhost/ecommpao/backend/api/updateCategory.php?
+// id=7&name=APICategorie27/02
 
 // {
 //     "status": 200,
-//     "result": "modification réussie ;",
+//     "result": "modification réussie.",
 //     "args": {
-//       "id": "1",
-//       "name": "Talons femmes"
+//       "id": "7",
+//       "name": "APICategorie27/02"
 //     },
-//     "time": "20/01/2021 17:33:23"
+//     "time": "26/02/2021 10:30:00"
 //   }
