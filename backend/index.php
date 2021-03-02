@@ -253,35 +253,23 @@ $db = new DataLayer();
 
 
 /* TEST update UserEntity */
-$user =new UserEntity();
-$user->setIdUser(57);
-$user->setSexe(0);
-$user->setPseudo("2602");
-$user->setEmail("email26022021@mail.com");
-$user->setFirstname("2602");
-$user->setLastname("2602");
+// $user =new UserEntity();
+// $user->setIdUser(57);
+// $user->setSexe(1);
+// $user->setPseudo("2602");
+// $user->setEmail("email26022021@mail.com");
+// $user->setFirstname("2602");
+// $user->setLastname("2602");
 // $user->setDescription("description26/02");
 // $user->setdateBirth("16/09/1968");
 // $user->setAdresseFacturation("AdresseFacturation");
 // $user->setAdresseLivraison("AdresseLivraison");
 // $user->setPassword("1234");
-///////////////////////////////////////////////////////
-// $user->setIdUser(64);
-// $user->setSexe(1);
-// $user->setPseudo("SACI2502");
-// $user->setFirstname("SACI");
-// $user->setLastname("Zakaria");
-// $user->setDescription("description");
-// $user->setdateBirth("16/09/1968");
-// $user->setAdresseFacturation("AdresseFacturation");
-// $user->setAdresseLivraison("AdresseLivraison");
-// $user->setTel("0695065455");
-// $user->setEmail("zakaria51@mail.com");
-// $user->setPassword("1234");
 
-$var = $db->updateUsers($user);
-echo "<pre>";
-print_r($user);
+// $var = $db->updateUsers($user);
+// echo "<pre>";
+// print_r($user);
+
 
 /* TEST Delete */
 
