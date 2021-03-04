@@ -12,5 +12,19 @@ if (sizeof($url_clean) < 4) {
     $pos = strpos($action,'?');
     $temp = explode("?",$action);
     $action = $temp[0];
+
+    if($_SERVER["REQUEST_METHOD"] === "GET"){
+        echo"recuperation";
+    }elseif($_SERVER["REQUEST_METHOD"] === "POST"){
+        echo"creat";
+    }elseif($_SERVER["REQUEST_METHOD"] === "DELETE"){
+        echo"delete";
+    }elseif($_SERVER["REQUEST_METHOD"] === "PUT"){
+        echo"update";
+    }
+
+
+
+
 }
-var_dump($action);
+// var_dump($action);
