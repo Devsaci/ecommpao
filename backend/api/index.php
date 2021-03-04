@@ -12,6 +12,5 @@ if (sizeof($url_clean) < 4) {
     $pos = strpos($action,'?');
     $temp = explode("?",$action);
     $action = $temp[0];
-
-
 }
+var_dump($action);
