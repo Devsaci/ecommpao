@@ -14,7 +14,7 @@ if (sizeof($url_clean) < 4) {
     $action = $temp[0];
 
     if($_SERVER["REQUEST_METHOD"] === "GET"){
-        echo"recuperation";
+        require './get'.ucwords($action).".php";
     }elseif($_SERVER["REQUEST_METHOD"] === "POST"){
         echo"creat";
     }elseif($_SERVER["REQUEST_METHOD"] === "DELETE"){
