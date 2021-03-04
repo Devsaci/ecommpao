@@ -1,11 +1,11 @@
 <?php
-// require 'config/config.php';
-// define("BASE_URL", dirname($_SERVER['SCRIPT_NAME']));
+require 'config/config.php';
+define("BASE_URL", dirname($_SERVER['SCRIPT_NAME']));
 
 
 ?>
 
-<!--
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +13,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-     -->
-   <!-- <style>
-       /*  a {
+   
+   <style>
+       a {
             color: black;
         }
 
@@ -66,16 +66,16 @@
 
         nav.navbar {
             background-color: #288690 !important;
-        } */
+        } 
     </style>
-   -->
+ 
 
-   <!--  
+  
     <title>API microbe_souck </title>
 </head>
-   -->
 
-     <!--  
+
+      
 <body>
    
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
@@ -84,46 +84,48 @@
             <span class="navbar-toggler-icon"></span>
         </button>
     </nav>
+
+
     <div class="container">
         <h1 class="text-center display-4">Documentation API microbe_souck</h1>
- -->
+
         <?php
 
         // Ouverture du dossier API
-        // foreach ($_ROUTES as $key => $entity) {
-        //     $response = "<div id='$entity' class='display-4'><h4>" . ucwords($entity) . "</h4>";
-        //     foreach ($METHODES as $methode => $description) {
-        //         $response .= "<p><span class='$methode'> $methode </span> 
-        //       <span class='url'>
-        //       <a href='" . BASE_URL . "/api/$entity'target='_blank'> /api/$entity</a>
-        //       </span> 
-        //       " . $description['description'] . " : $entity</p>";
-        //     }
-        //     echo $response . '</div>';
-        // }
+        foreach ($_ROUTES as $key => $entity) {
+            $response = "<div id='$entity' class='display-4'><h4>" . ucwords($entity) . "</h4>";
+            foreach ($METHODES as $methode => $description) {
+                $response .= "<p><span class='$methode'> $methode </span> 
+              <span class='url'>
+              <a href='" . BASE_URL . "/api/$entity'target='_blank'> /api/$entity</a>
+              </span> 
+              " . $description['description'] . " : $entity</p>";
+            }
+            echo $response . '</div>';
+        }
 
         ?>
-  <!--  
+  
 
     </div>
 </body>
 
 </html>
-  -->
+
 
 
 <?php
 //import des parametres de connection à la BD 
-require 'config/config.php';
-require 'model/DataLayer.class.php';
-require 'entity/userEntity.php';
-require 'entity/categoryEntity.php';
-require 'entity/productEntity.php'; 
-require 'entity/ordersEntity.php'; 
+// require 'config/config.php';
+// require 'model/DataLayer.class.php';
+// require 'entity/userEntity.php';
+// require 'entity/categoryEntity.php';
+// require 'entity/productEntity.php'; 
+// require 'entity/ordersEntity.php'; 
 
 
 //Instantiation objet DataLayer
-$db = new DataLayer();
+// $db = new DataLayer();
 
 
 
