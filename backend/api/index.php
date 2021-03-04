@@ -9,4 +9,9 @@ if (sizeof($url_clean) < 4) {
     exit();
 } else {
     $action = $url_clean[sizeof($url_clean)-1];
+    $pos = strpos($action,'?');
+
+
+
+
 }
