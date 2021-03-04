@@ -11,7 +11,7 @@ if (sizeof($url_clean) < 4) {
     $action = $url_clean[sizeof($url_clean)-1];
     $pos = strpos($action,'?');
     $temp = explode("?",$action);
-
+    $action = $temp[0];
 
 
 }
