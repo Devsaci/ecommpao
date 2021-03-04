@@ -8,5 +8,5 @@ if (sizeof($url_clean) < 4) {
     header("Location: ../index.php");
     exit();
 } else {
-    # code...
+    $action = $url_clean[sizeof($url_clean)-1];
 }
