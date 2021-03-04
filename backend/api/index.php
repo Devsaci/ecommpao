@@ -20,7 +20,7 @@ if (sizeof($url_clean) < 4) {
     }elseif($_SERVER["REQUEST_METHOD"] === "DELETE"){
         echo"delete";
     }elseif($_SERVER["REQUEST_METHOD"] === "PUT"){
-        echo"update";
+        require './update'.ucwords($action).".php";
     }
 
 
